@@ -2,7 +2,7 @@ body, html {
     margin: 0;
 }
 
-#content {
+#header {
     font-size: 50px;
     text-shadow: 2px 1px #363636;
     font-family: sans-serif;
