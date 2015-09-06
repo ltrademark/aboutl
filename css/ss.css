@@ -1,4 +1,6 @@
-body, html {
+@import url(https://fonts.googleapis.com/css?family=Questrial|Biryani:800);
+
+}body, html {
 }
 
 body {
@@ -16,7 +18,7 @@ body {
     max-height: 900px;
     padding: 5px;
     text-align: center;
-    font-family: sans-serif;
+    font-family: 'Biryani', sans-serif;
     background-color: #afd33d;
     line-height: 0;
     color: #fff;
@@ -27,7 +29,6 @@ body {
     font-size: 15vmin;
     text-shadow: 2px 1px #363636;
     font-weight: 300;
-    letter-spacing: 3px;
 }
 
 #header > h2 {
@@ -81,7 +82,7 @@ nav {
 
 .out {
     text-decoration: none;
-    font-family: sans-serif;
+    font-family: 'Questrial', sans-serif;
     color: #fff;
     width: 100%;
     padding: 8px;
@@ -114,17 +115,19 @@ nav {
 }
 
 #content  h1 {
-    font-size: 6vmin;
-    font-weight: 100;
+    font-size: 5vmin;
+    font-family: 'Biryani', sans-serif;
     width: auto;
     padding: 0;
-    text-indent: 45px;
+    text-indent: 40px;
     letter-spacing: 4px;
     margin-bottom: 25px;
 }
 
 #content h2 {
     font-size: 3vh;
+    font-family: 'Questrial', sans-serif;
+    letter-spacing: 2px;
     width: 100%;
     margin-bottom: 0;
     padding-left: 5px;
@@ -133,6 +136,9 @@ nav {
 #content p {
     margin-top: 0;
     padding: 15px;
+    font-family: 'Questrial', sans-serif;
+    font-weight: lighter;
+    line-height: 20px;
 }
 
 .Summary {
@@ -151,14 +157,11 @@ nav {
 
 .workSection {
     margin: 0;
+    font-family: 'Questrial', sans-serif;
+    font-weight: lighter;
+    letter-spacing: 1px;
     padding-bottom: 5px;
 }
-
-.w1 {}
-
-.w2 {}
-
-.w3 {}
 
 .Skills {
     width: 33.3%;
@@ -171,6 +174,8 @@ nav {
     text-align: center;
     padding: 5px;
     list-style-position: inside;
+    list-style-type: square;
+    font-family: 'Questrial', sans-serif;
 }
 
 #footer {
