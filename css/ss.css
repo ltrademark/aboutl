@@ -6,6 +6,9 @@ body {
     margin: 0;
     background-color: #000;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: auto;
+    text-rendering: optimizeLegibility;
 }
 
 #header {
