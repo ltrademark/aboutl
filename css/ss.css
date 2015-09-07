@@ -63,10 +63,10 @@ nav {
     padding: 5px;
     padding-left: 0;
     align-content: center;
-    margin-left: -40px;
 }
 .links { 
     width: 100%;
+    padding: 0;
 }
 .links li {
     text-align: center;
@@ -91,17 +91,22 @@ nav {
 
 .out:hover {
     color: #afd33d;
-    -webkit-border-radius: 3px;
+    -webkit-border-radius: 8px;
     background-color: #000;
     font-style: oblique;
 }
 
+.portfolio:hover {
+    -webkit-border-radius: 8px 0 8px 8px;
+}
+
 .work:hover {
-   background-color: #a60000;
+   color: #a60000;
 }
 
 .cont:hover {
-    background-color: #444444;
+    color: #444444;
+     -webkit-border-radius: 0px 8px 8px 8px;
 }
 
 #content {
@@ -114,18 +119,24 @@ nav {
     color: #fff;
 }
 
-#content  h1 {
-    font-size: 5vmin;
+#content h1 {
+    font-size: 5.3vmin;
     font-family: 'Biryani', sans-serif;
+    background-image: url('/img/headx.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    vertical-align: middle;
+    background-size: 9%;
     width: auto;
-    padding: 0;
-    text-indent: 40px;
-    letter-spacing: 4px;
-    margin-bottom: 25px;
+    padding-top: 12px;
+    text-indent: 45px;
+    letter-spacing: 1px;
+    margin-top: 3px;
+    margin-bottom: 2px;
 }
 
 #content h2 {
-    font-size: 3vh;
+    font-size: 18px;
     font-family: 'Questrial', sans-serif;
     letter-spacing: 2px;
     width: 100%;
@@ -145,6 +156,7 @@ nav {
     width: 33.3%;
     float: left;
     position: static;
+    margin: 0;
 }
 
 .workExp {
@@ -166,13 +178,16 @@ nav {
 .Skills {
     width: 33.3%;
     float: left;
+    position: static;
+    margin: 0;
 }
 
 .Lang {
-    width: 100%;
+    width: 33.3%;
     float: left;
     text-align: center;
     padding: 5px;
+    visibility: hidden;
     list-style-position: inside;
     list-style-type: square;
     font-family: 'Questrial', sans-serif;
@@ -184,7 +199,7 @@ nav {
     width: 100%;
     height: 100px;
     background-color: #121212;
-    font-family: sans-serif;
+    font-family: 'Questrial', sans-serif;
     display: inline-block;
     bottom: 0px;
     padding: 20px;
@@ -205,4 +220,72 @@ nav {
 
 #footer a:hover {
    color: #afd33d;
+}
+
+@media only screen and (max-width:768px) {
+    
+    body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+    
+    #header {
+        width: 100%;
+        padding: 0;
+    }
+    
+    #content {
+        padding: 5px;
+        margin: 0 auto;
+    }
+    
+    #content h1 {
+        padding-bottom: 0;
+        font-size: 26px;
+    }
+    #content h2 {
+        
+    }
+    
+    .Summary {
+        width: auto;
+        height: auto;
+        display: block;
+        padding: 1px;
+        box-sizing: border-box;
+    }
+    
+    .Skills {
+        width: auto;
+        height: auto;
+        font-size: auto;
+        display: block;
+        padding: 1px;
+        box-sizing: border-box;
+    }
+    
+    .workExp {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .Lang {
+        display: block;
+        visibility: visible;
+        text-align: left;
+        height: auto;
+        width: 100%;
+    }
+    
+    #footer {
+        max-width: 100%;
+        padding: 20px 0;
+    }
+    
+    #footer > p {
+        text-align: center;
+        line-height: normal;
+        margin-bottom: -11px; 
+    }
 }
