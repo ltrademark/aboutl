@@ -120,14 +120,13 @@ nav {
 #content h1 {
     font-size: 5.3vmin;
     font-family: 'Biryani', sans-serif;
-    background-image: url('/img/headx.png');
+    background-image: url('http://s2.postimg.org/trrtefcs5/headx.png');
     background-repeat: no-repeat;
     background-position: left center;
     vertical-align: middle;
-    background-size: 9%;
     width: auto;
     padding-top: 12px;
-    text-indent: 45px;
+    text-indent: 50px;
     letter-spacing: 1px;
     margin-top: 3px;
     margin-bottom: 2px;
