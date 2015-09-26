@@ -283,7 +283,7 @@ nav {
     font-size: 2.5em;
     display: block;
     margin-top: 23px;
-    right: 3px;
+    margin-right: 5px;
 }
 
 #header.fix-head > h2 {
