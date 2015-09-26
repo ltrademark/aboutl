@@ -158,6 +158,7 @@ nav {
     background-image: url('http://s2.postimg.org/trrtefcs5/headx.png');
     background-repeat: no-repeat;
     background-position: left center;
+    background-size: 10%;
     vertical-align: middle;
     width: auto;
     padding-top: 12px;
@@ -271,32 +272,34 @@ nav {
     #header.fix-head {
     position: fixed;
     top: 0px;
-    height: 100px;
+    height: 90px;
  
     z-index: 1000;
 }
 
 #header.fix-head > h1 {
-    font-size: 2em;
+    font-size: 3em;
     display: block;
     margin-top: 25px;
 }
 
 #header.fix-head > h2 {
-    font-size: 0.5em;
+    font-size: 0.9em;
     display: block;
-    margin-top: 0px;
+    margin-top: -5px;
 }
 
 #header.fix-head > .photo {
     left: 8px;
     top: 5px;
-    height: 60px;
-    width: 60px;
+    height: 70px;
+    width: 70px;
     position: absolute;
 }
 #header.fix-head > nav {
-    top: 5px;
+    position: relative;
+    margin-top: -15px;
+    font-size: 0.9em;
 }
     
     #content {
@@ -307,6 +310,7 @@ nav {
     #content h1 {
         padding-bottom: 0;
         font-size: 26px;
+        background-size: 10% / 3;
     }
     #content h2 {
         
