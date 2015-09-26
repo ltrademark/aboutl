@@ -113,6 +113,7 @@ nav {
     top: 0px;
     height: 50px;
     transition: 0.3s ease all;
+    box-shadow: 0 8px 10px #000;
  
     z-index: 1000;
 }
