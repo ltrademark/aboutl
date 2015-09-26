@@ -295,9 +295,7 @@ nav {
     position: absolute;
 }
 #header.fix-head > nav {
-    right: 0;
     top: 5px;
-    position: absolute;
 }
     
     #content {
