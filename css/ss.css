@@ -281,12 +281,14 @@ nav {
     font-size: 2.5em;
     display: block;
     margin-top: 23px;
+    right: 3px;
 }
 
 #header.fix-head > h2 {
     font-size: 0.9em;
     display: block;
     margin-top: -5px;
+    right: 5px;
 }
 
 #header.fix-head > .photo {
