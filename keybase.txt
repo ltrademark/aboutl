@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/ltrademark
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://leoh.me
+  * I am ltrademark (https://keybase.io/ltrademark) on keybase.
+  * I have a public key with fingerprint D31F 432E 4443 3DEC E218  4B09 1A4F 98B1 58D1 AD4B
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01019cefcd805a955f1f4d8229bc826f02d41bde3d9b810101738802eb786ce0133d0a",
+            "fingerprint": "d31f432e44433dece2184b091a4f98b158d1ad4b",
+            "host": "keybase.io",
+            "key_id": "1a4f98b158d1ad4b",
+            "kid": "01019cefcd805a955f1f4d8229bc826f02d41bde3d9b810101738802eb786ce0133d0a",
+            "uid": "96c10f1ff3b9fe376fdbf55115599619",
+            "username": "ltrademark"
+        },
+        "service": {
+            "hostname": "leoh.me",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1445879790,
+    "expire_in": 157680000,
+    "prev": "1e86dc84f26ed0beccec2072f9c54267de7c06545b9397b3ccd9c874e05fcf4e",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.47
+Comment: https://keybase.io/crypto
+
+yMIiAnicrZJdSBVBGIaPaZqWqRSURTfbD2miO/s/B5KiSCyDLAwS6bDzs57t6NnT
+ntUUE+oio7QgIysFQ0QrC/NC0SzCzIiUiISIFCn6M5MUJChDqlnJuy6bm5n5eN53
+3vn4BuIjPXER+1Ylqd9rXlyOGHp4scRzMN03VcEhi5Rz3gouQOc3WkRo2PEFTMJ5
+OR7wAGJqYKLxsg5l2QCGRDRBgAhrgmLwApEAIlQkEGnApVVR03iBIlVTMOWBKBJe
+59I4wwwWUjtkm0GH2RKR2YgClSSJARRTAWgS4iHQJQNqCMgaATqREBP6rbCrYOGQ
+HqbppsVq7OKbj/cP/j/nLpm3gwoGPLMwRAQNKqqKQZAhywDIMoQKgC4YpnZQL6aM
+LnJsndBi3Q5wlWkcq5eamLqtdf+ywFDLn85OaVzIthwLW0Ws6HeckNfVOOUhFzpG
+ke+v3IfMIGE9ZIJSaodNK8h5ASOxY7p+QJJkTYUq5NM4WhYybeozXUJWFY1ny32G
+lrodo5pCsCYZgkIJjyjGFAu8KhgQy5KgqISqmFdkSUZQhCoSMSYQa6pEednAhuQG
+DtOjQYvzKiymXsgsw2ZhUHdKbMpV9vcVRHki4jzRixe5s+WJi01cmLhtVsxcfJcR
+uQeGI45nThZ3LKnPf7Xi50wXqHnyaPcAnc51Sm496/vy2FM5VzM5mnCtQ325bFdS
+7YPAydWneqobT6CK9nVq69aAMDwlLt37vDvlfW3nyum34xNdbVXjLeWBxPaqUEZr
+Xsvp1zu341Ob1r+rn/XdOTTalCxcvXEmp/r3eNb98cPG+agrBZ19KVZyd15LbGPh
+r9SP/Umk6esEHIvOjpvdrNddWDvZ27y/oqGqLedB7vBg99mRypsfnrRv3D5VnGAP
+bln+Lakh43F29UxKaobZs62z9/rD5jc/pJShe5Hm3R0HPg1HT42R25kb6tbkl419
+zgr0PJ21/TsunRvtOzIS8we9ikWQ
+=kkht
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ltrademark
+
+==================================================================
