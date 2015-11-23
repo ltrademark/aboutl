@@ -5,3 +5,6 @@ This page serves as CV as well as a personal contact sheet for me.
 You can check out my other stuff over at www.Ltrademark.com
 
 I can also be found mostly anywhere @Ltrademark
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ltrademark/ltrademark.github.io/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
