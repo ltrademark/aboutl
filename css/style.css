@@ -684,7 +684,7 @@ html {
   color: rgba(255, 255, 255, 0.7);
   padding: 10px 20px;
   box-sizing: border-box;
-  width: 96px;
+  width: 120px;
   -webkit-transition: 0.2s ease all;
   transition: 0.2s ease all;
 }
