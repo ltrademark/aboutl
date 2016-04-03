@@ -570,6 +570,8 @@ html {
 }
 #work .tile .icon .vsco {
   fill: #fff;
+  width: 100%;
+  height: 100%;
 }
 #contact {
   width: 100%;
