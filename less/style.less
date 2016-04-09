@@ -490,6 +490,47 @@ body, html {
 		}
 	}
 }
+#more-links {
+	width: 100%;
+	background-color: #ccc;
+	transition:@transitionDefault;
+	overflow: hidden;
+	&.ex-toggle {
+		height: 0 !important;
+		.outbound {
+			display: none;
+		}
+	}
+	.outbound {
+		text-align: center;
+		padding: 10px 0;
+		box-sizing: border-box;
+		ul {
+			display: inline-block;
+			list-style-type: none;
+			font-size: 0.7em;
+			li {
+				display: inline-block;
+				&:last-child {
+					&:after {
+						content: '';
+					}
+				}
+				&:after {
+					content: '//';
+					opacity: 0.4;
+				}
+				.stalk {
+					color: #121212;
+					text-decoration: none;
+					box-sizing: border-box;
+					padding: 0 10px;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}
 #workOffset {
 	outline: 0;
 	border: 0;
