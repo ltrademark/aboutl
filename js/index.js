@@ -30,16 +30,25 @@ $(function() {
 	}); //win func.
 }); //ready func.
 
-$('.menu-toggle-open').click(function() {
-	$('body').css("overflow", "hidden");
-	$('.mobile-menu').addClass("open");
-	$('.menu-pane').addClass("open");
+$(document).ready( function() {
+	$('.menu-toggle-open').click(function() {
+		$('body').css("overflow", "hidden");
+		$('.mobile-menu').addClass("open");
+		$('.menu-pane').addClass("open");
+	});
+	$('.menu-toggle-close, .work-anchor').click(function() {
+		$('.mobile-menu').removeClass("open");
+		$('.menu-pane').removeClass("open");
+		$('body').css("overflow", "");
+	});
+
+	var hiddenSection = $('#more-links').height();
+	$('#more-links').css("height", hiddenSection + "px").addClass('ex-toggle');
+	$('.expand').click(function() {
+		$('#more-links').toggleClass('ex-toggle');
+	});
 });
-$('.menu-toggle-close, .work-anchor').click(function() {
-	$('.mobile-menu').removeClass("open");
-	$('.menu-pane').removeClass("open");
-	$('body').css("overflow", "");
-});
+
 function countChar(val) {
 	var limit = val.value.length;
 	var count = 140 - limit;

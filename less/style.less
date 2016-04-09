@@ -97,7 +97,8 @@ body, html {
 	}
 	.menu-pane {
 		position: absolute;
-		right: -80%;
+		right: 0;
+		transform: translateX(110%);
 		background-color: #fff;
 		height: 100%;
 		width: 70%;
@@ -106,7 +107,7 @@ body, html {
 		box-shadow: -5px 0 30px rgba(0, 0, 0, 0.4);
 		transition: 0.7s ease-in-out all;
 		&.open {
-			right: 0;
+			transform: translateX(0);
 		}
 		.menu-toggle-close {
 			position: absolute;
@@ -450,6 +451,42 @@ body, html {
 			white-space: pre-wrap;
 			line-height: 2;
 			text-indent: 5ch;
+		}
+	}
+	.expand-button {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10px;
+		.expand {
+			cursor: pointer;
+			position: relative;
+			display: inline-block;
+			text-align: left;
+			transition: @transitionDefault;
+			z-index:2;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				height: 100%;
+				width: 0;
+				display: block;
+				transition: @transitionDefault;
+				box-shadow: inset 0 -2px 0 @green;
+				z-index:-1;
+			}
+			&:hover {
+				color: @green;
+				&:after {
+					width: 100%;
+				}
+			}
+			&:active {
+				color: #fff;
+				&:after {
+					box-shadow: inset 0 -20px 0 @green;
+				}
+			}
 		}
 	}
 }
