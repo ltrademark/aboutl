@@ -10,7 +10,18 @@ body, html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	transition: @transitionDefault;
+	&::-webkit-scrollbar{
+    width: 15px;
+    &-track {
+      background-color: transparent;
+    }
+    &-thumb {
+      border-radius: 7.5px;
+      background-color: @green;
+    }
+  }
 }
+
 //vars
 @green: #afd33d;
 @greenShadow: darken(@green, 10%);
