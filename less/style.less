@@ -80,11 +80,11 @@ body, html {
 
 			&:nth-child(1) {
 				transform: rotate(45deg);
-				animation: playRight 2s ease infinite;
+				animation: playRight 5s ease infinite;
 			}
 			&:nth-child(2) {
 				transform: rotate(-45deg);
-				animation: playLeft 2s ease infinite;
+				animation: playLeft 5s ease infinite;
 			}
 		}
 		p {
@@ -504,6 +504,7 @@ body, html {
 	}
 }
 #more-links {
+	position: relative;
 	width: 100%;
 	background-color: #ccc;
 	transition:@transitionDefault;
@@ -543,6 +544,92 @@ body, html {
 					font-weight: 700;
 					&:hover {
 						color: @green;
+					}
+					&.snapchats {
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+	.snap-modal {
+		opacity: 0;
+		visibility: hidden;
+		display: inline-block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: fade(#fff, 85%);
+		transition: 0.3s ease all;
+		z-index: 15;
+		&.open {
+			visibility: visible;
+			opacity: 1;
+			.snapcode {
+				transform: translate(-50%,-50%);
+				opacity: 1;
+			}
+		}
+		.snapcode {
+			opacity: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, 100%);
+			max-width: 400px;
+			max-height: 400px;
+			background-color: #fff;
+			padding: 5vw;
+			border-radius: 3px;
+			box-shadow: 0 0 0 1px #ccc;
+	    box-sizing: border-box;
+			transition: 0.3s ease all;
+			.close {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				cursor: pointer;
+				color: #ccc;
+				transition: 0.3s ease all;
+				&:after {
+					content: 'close';
+					display: inline-block;
+					color: #121212;
+					float: left;
+					transform: translateX(10px);
+					font-family: 'Raleway', sans-serif;
+					margin-right: 5px;
+					line-height: 17px;
+					opacity: 0;
+					transition: @transitionDefault;
+				}
+				&:hover {
+					color: @green;
+					&:after {
+						opacity: 1;
+						transform: translateX(0);
+					}
+				}
+			}
+			a {
+				svg {
+					width: 100%;
+					height: 100%;
+					.lines {
+						fill: darken(@green, 10%);
+						transition: 0.2s ease all;
+					}
+					.bg {
+						fill: #fff;
+					}
+				}
+				&:hover {
+					svg {
+						.lines {
+							fill: @green;
+						}
 					}
 				}
 			}
