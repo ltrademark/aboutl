@@ -33,6 +33,7 @@ body, html {
 @border: 1px solid #ccc;
 @transitionDefault: 0.2s ease all;
 @bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+@swing: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 @avatar: url('https://secure.gravatar.com/avatar/e2a5b810db87d57c68e4712d8e9a6e00?size=500');
 
 //small branding
@@ -565,7 +566,7 @@ body, html {
 		width: 100%;
 		height: 100%;
 		background-color: fade(#fff, 85%);
-		transition: 0.3s ease all;
+		transition: 0.5s ease all;
 		z-index: 15;
 		&.open {
 			visibility: visible;
@@ -590,7 +591,7 @@ body, html {
 			border-radius: 3px;
 			box-shadow: 0 0 0 1px #ccc;
 	    box-sizing: border-box;
-			transition: 0.5s @bounce all;
+			transition: 0.5s @swing all;
 			.close {
 				position: absolute;
 				top: 5px;
@@ -914,11 +915,10 @@ footer {
 					width: 0;
 					display: block;
 					transition: @transitionDefault;
-					box-shadow: inset 0 -2px 0 lighten(@green, 20%);
+					box-shadow: inset 0 -2px 0 #fff;
 					z-index:-1;
 				}
 				&:hover {
-					color: lighten(@green, 20%);
 					&:after {
 						width: 100%;
 					}
@@ -929,7 +929,7 @@ footer {
 				&:active {
 					color: #121212;
 					&:after {
-						box-shadow: inset 0 -20px 0 lighten(@green, 20%);
+						box-shadow: inset 0 -20px 0 #fff;
 					}
 				}
 			}
