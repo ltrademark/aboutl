@@ -10,9 +10,6 @@ $(window).load(function() {
 	setTimeout(delay, 2300);
 });
 
-// initiates Actions on scroll
-AOS.init();
-
 $('body').find('#about p').tweetHighlighted({
 	node: '<span class="fa fa-twitter"></span>',
 	popupArgs: 'width=600,height=600,toolbar=0,location=0',
