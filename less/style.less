@@ -104,13 +104,13 @@ body, html {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	background: rgba(0, 0, 0, 0);
+	background-color: fade(#fff, 0%);
 	z-index: 10;
 	transition: @transitionDefault;
 	visibility: hidden;
 	&.open {
 		visibility: visible;
-		background: rgba(0, 0, 0, 0.6);
+		background-color: fade(#fff, 60%);
 	}
 	.menu-pane {
 		position: absolute;
@@ -121,8 +121,8 @@ body, html {
 		width: 70%;
 		box-sizing: border-box;
 		padding: 50px;
-		box-shadow: -5px 0 30px rgba(0, 0, 0, 0.4);
-		transition: 0.7s ease-in-out all;
+		box-shadow: -5px 0 30px fade(#000, 40%);
+		transition: 0.5s ease-in-out all;
 		&.open {
 			transform: translateX(0);
 		}
@@ -206,15 +206,19 @@ body, html {
 }
 .navigation-bar {
 	position: fixed;
-	top: -20%;
+	top: 0;
+	transform: translateY(-60px);
 	display: inline-block;
 	background: linear-gradient(#fff, transparent);
 	width: 100%;
 	height: 60px;
 	padding: 10px;
 	box-sizing: border-box;
-	transition: @transitionDefault;
+	transition: 0.5s ease all;
 	z-index: 7;
+	&.dropped {
+		transform: translateY(0);
+	}
 	.left-section {
 		display: inline-block;
 		vertical-align: middle;
@@ -671,6 +675,7 @@ body, html {
 		transition: @transitionDefault;
 		color: #fff;
 		background: #000;
+		font-size: 0;
 		@media (max-width: 620px) {
 			width: calc(100%/3);
 		}
@@ -698,7 +703,7 @@ body, html {
 			transform: translate(-50%, -50%);
 			transition: @transitionDefault;
 			display: block;
-			font-size: 1.3em;
+			font-size: 3.3vmin;
 			opacity: 0;
 		}
 		.icon {
@@ -708,7 +713,7 @@ body, html {
 			transform: translate(-50%, -50%);
 			transition: @transitionDefault;
 			display: block;
-			font-size: 3em;
+			font-size: 6vmin;
 			opacity: 1;
 			&.sizing {
 				width: 40%;

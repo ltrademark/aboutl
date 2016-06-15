@@ -5,6 +5,11 @@ var delay = function() {
 		easing: "ease-in-out"
 	});
 };
+AOS.init({
+  duration: 600,
+  easing: 'ease-in-out-cubic',
+  delay: 100,
+});
 $(window).load(function() {
 	$(".loader").fadeOut(500);
 	setTimeout(delay, 2300);
@@ -23,9 +28,9 @@ $(function() {
 		var top = $(window).scrollTop();
 
 		if (top >= $('#normal').height() - 100) {
-			$('.navigation-bar').css("top", "0");
+			$('.navigation-bar').addClass('dropped');
 		} else {
-			$('.navigation-bar').css("top", "-20%");
+			$('.navigation-bar').removeClass('dropped');
 		} //if-else
 	}); //win func.
 }); //ready func.

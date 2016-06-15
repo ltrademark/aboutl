@@ -10,7 +10,7 @@
 	    <link rel="icon" href="assets/img/shortcut/ltrademarkMaterialLogo.png">
     	<link rel="stylesheet" href="css/normalize.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-      <link href="https://cdn.rawgit.com/michalsnik/aos/1.0.1/dist/aos.css">
+      <link rel="stylesheet prefetch" href="https://cdn.rawgit.com/michalsnik/aos/1.0.1/dist/aos.css">
 	    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Raleway:200,100,400'>
       <link rel="stylesheet" href="less/style.css">
   </head>
@@ -68,11 +68,11 @@
 </header>
 	<section id="about">
 	<div class="content">
-		<div class="content-heading">
-			<div class="avatar" aos="fade-down">
+		<div class="content-heading" aos="fade-right">
+			<div class="avatar">
 				<div class="photo"></div>
 			</div>
-			<div class="header" aos="fade-down">
+			<div class="header">
 				<h1>Leo Herrera <sup>(Ltrademark)</sup></h1>
 				<h3>Full-stack Designer</h3>
 			</div>
@@ -82,7 +82,7 @@
 		<p aos="fade-up">Aside from the obvious, in my spare time I write poetry and eat lots of food. Most to the point of regret. On both. Though my talents seem to be scrambled, the internet has found a way to aggregate my nonsense, so for the most part, I'm failry searchable.</p>
 		<p aos="fade-up">To be honest, I dont know how to write about myself in a positive manner (or any manner), So I'll probably rewrite this at some point in the future when I have something better drafted. Consider this a fancy, long-whinded Lorem Ipsum.</p>
 	</div>
-  <div class="expand-button" aos="fade-right">
+  <div class="expand-button" aos="zoom-in">
 		<a class="expand">stalk me</a>
 	</div>
 </section>
@@ -142,12 +142,12 @@
 </section>
 	<section id="contact">
 	<div class="head" aos="fade-up">
-		<h1>mail me, tweet me?</h1>
+		<h1>mail me? tweet me?</h1>
 	</div>
-	<div class="mail-icon" aos="fade-up">
+	<div class="mail-icon" aos="fade-left">
 		<a href="mailto:leo@ltrdmrk.co?subject=wanted+to+get+in+contact" class="fa fa-envelope-o" target="_blank"></a>
 	</div>
-	<div class="twitterForm" aos="fade-up">
+	<div class="twitterForm" aos="fade-right">
 		<div class="heading"></div>
 		<div class="gt-sh-enter-tweet">
 			<input id="tweet-input" class="gt-tweet" placeholder="enter your tweet" type="textbox" onkeyup="countChar(this)" />
@@ -167,15 +167,6 @@
 			<p>Want to support my endeavor? <a href="https://cash.me/$Ltrademark"><i class="fa fa-beer"></i>&nbsp;Buy me a beer</a></p>
 		</div>
 	</div>
-  <div class="square-cash-modal">
-    <div class="web-page-cont">
-      <span class="close fa fa-close"></span>
-      <iframe src="https://cash.me/$Ltrademark" scrollbar="no" frameborder="0"></iframe>
-      <?php
-	    header('X-Frame-Options: GOFORIT'); 
-	?>
-    </div>
-  </div>
 </footer>
 </body>
 <script>
@@ -190,10 +181,10 @@
 </script>
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+  <script src="https://cdn.rawgit.com/michalsnik/aos/1.0.1/dist/aos.js"></script>
 	<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/396624/jquery.tweetHighlighted.js'></script>
 	<script src='http://platform.twitter.com/widgets.js'></script>
 	<script src='js/index.js'></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
-	<script src="https://cdn.rawgit.com/michalsnik/aos/1.0.1/dist/aos.js"></script>
   <script src="https://use.fontawesome.com/2878b2a782.js"></script>
 </html>
