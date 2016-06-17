@@ -366,22 +366,6 @@ body, html {
 	}
 	.content {
 		display: inline-block;
-		h1, h3 {
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-			text-transform: uppercase;
-			margin: 0;
-			padding: 0;
-		}
-		h3 {
-			font-style: italic;
-			font-weight: 200;
-		}
-	}
-}
-#about {
-	width: 100%;
-	.content {
 		width: 100%;
 		height: auto;
 		padding: 20px 100px;
@@ -478,6 +462,39 @@ body, html {
 			white-space: pre-wrap;
 			line-height: 2;
 			text-indent: 5ch;
+		}
+		h1, h3 {
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			text-transform: uppercase;
+			margin: 0;
+			padding: 0;
+		}
+		h3 {
+			display: inline-block;
+			position: relative;
+			font-style: italic;
+			font-weight: 200;
+			padding-right: 10px;
+			&:hover {
+				a {
+					opacity: 1;
+			    transform: translate(0, -10%);
+				}
+			}
+			a {
+				position: absolute;
+				left: 100%;
+				top: 10%;
+		    transform: translate(-20%, -10%);
+				opacity: 0;
+				font-size: 0.8em;
+				transition: @transitionDefault;
+				color: #999;
+				&:hover {
+					color: @green;
+				}
+			}
 		}
 	}
 	.expand-button {
@@ -1011,11 +1028,11 @@ footer {
 	}
 }
 .tweet-me {
+	position: relative;
 	visibility: hidden;
-	background: lighten(@green, 30%);
-	color: @green;
-	border-radius: 0 50% 50% 50%;
-	border: 1px solid lighten(@green, 10%);
+	background: lighten(@green, 10%);
+	color: #fff;
+	border-radius: 50%;
 	box-sizing: border-box;
 	padding: 10px;
 	box-shadow: 0 3px 10px fade(@text, 40%);
@@ -1024,6 +1041,26 @@ footer {
 		box-shadow: 0 1px 15px fade(@text, 20%);
 		background: @green;
 		color: #fff;
+		&:after {
+			content: '';
+			position: absolute;
+			top: -6px;
+			left: -8px;
+			transform: rotate(45deg);
+			border-width: 7px 10px;
+			border-style: solid;
+			border-color: transparent  @green transparent transparent;
+		}
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: -6px;
+		left: -8px;
+		transform: rotate(45deg);
+		border-width: 7px 10px;
+		border-style: solid;
+		border-color: transparent  lighten(@green, 10%) transparent transparent;
 	}
 }
 // ANIMATIONS
