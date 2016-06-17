@@ -61,6 +61,35 @@ $(document).ready( function() {
 		$('.snap-modal').removeClass('open');
 	});
 	console.log("%c################################################################################################\n################################################################################################\n##                                                                                            ##\n##                                                                                            ##\n##                                                                                            ##\n##                                                                                            ##\n##         ###    ########## ######    #######    ####      ###  #######    ##    ###         ##\n##         ###    ########## #######   ########   ####     ####  ########   ##   ###          ##\n##         ###        ##     ##   ###  ##   ####  #####    ####  ###  ####  ##   ##           ##\n##         ###        ##     ##   ###  ##   ####  #####    ####  ###  ####  ##   ##           ##\n##         ###        ##     ##   ###  ##    ###  #####    ####  ###   ###  ##  ###           ##\n##         ###        ##     ##   ###  ##     ### #####   #####  ###   ###  ## ###            ##\n##         ###        ##     ##   ###  ##     ### #####   ## ##  ###   ###  ## ##             ##\n##         ###        ##     #######   ##     ### ### ##  ## ##  ########   #####             ##\n##         ###        ##     ######    ##     ### ### ##  ## ##  #######    ######            ##\n##         ###        ##     ## ###    ##     ### ### ## ##  ##  ### ###    ### ###           ##\n##         ###        ##     ##  ###   ##     ##  ### ## ##  ##  ###  ###   ##  ###           ##\n##         ###        ##     ##   ##   ##    ###  ###  ####  ##  ###  ###   ##   ###          ##\n##         #######    ##     ##   ###  #########  ###  ####  ##  ###   ###  ##   ###          ##\n##         #######    ##     ##    ##  ########   ###  ###   ##  ###    ##  ##    ###         ##\n##         #######    ##     ##    ### ######     ###  ###   ##  ###    ### ##    ###         ##\n##                                                                                            ##\n##                                                                                            ##\n##                                                                                            ##\n##                                                                                            ##\n################################################################################################\n################################################################################################", "color: #afd33d; font-weight: bold;");
+/*
+	$('a.popup').click(function (event) {
+		var top = screen.height/2 - 450/2;
+		var left = screen.width/2 - 700/2;
+		var newwindow = window.open($(this).attr('href'),'','height=500,width=450,top=' + top + ',left=' + left);
+		if (window.focus) {newwindow.focus()}
+		return false;
+  }); */
+
+	function PopupCenterDual(url, title, w, h) {
+		// Fixes dual-screen position Most browsers Firefox
+		var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+		var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+		width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+		height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+		var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+		var top = ((height / 2) - (h / 2)) + dualScreenTop;
+		var newWindow = window.open(url, title, 'scrollbars=yes,titlebar=no,toolbar=no,location=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+		// Puts focus on the newWindow
+		if (window.focus) {
+			newWindow.focus();
+		}
+	}
+	$('a.popup').click(function(){
+		var url = $(this).attr('link');
+		PopupCenterDual(url,'','450','600');
+	});
 });
 
 function countChar(val) {

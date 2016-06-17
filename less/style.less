@@ -670,6 +670,7 @@ body, html {
 	overflow: hidden;
 	margin: 70px 0;
 	height: auto;
+	font-size: 0;
 	@media (max-width: 620px) {
 		flex-wrap: wrap;
 	}
@@ -681,7 +682,7 @@ body, html {
 		transition: @transitionDefault;
 		color: #fff;
 		background: #000;
-		font-size: 0;
+		font-size: 16px;
 		@media (max-width: 620px) {
 			width: calc(100%/3);
 		}
@@ -709,7 +710,7 @@ body, html {
 			transform: translate(-50%, -50%);
 			transition: @transitionDefault;
 			display: block;
-			font-size: 3.3vmin;
+			font-size: 1.5em;
 			opacity: 0;
 		}
 		.icon {
@@ -719,11 +720,11 @@ body, html {
 			transform: translate(-50%, -50%);
 			transition: @transitionDefault;
 			display: block;
-			font-size: 6vmin;
+			font-size: 3em;
 			opacity: 1;
 			&.sizing {
-				width: 40%;
-				height: 40%;
+				width: 1em;
+				height: 1em;
 			}
 			.vsco {
 				fill: #fff;
@@ -912,6 +913,7 @@ footer {
 			color: #fff;
 			padding-left: 10px;
 			a {
+				cursor: pointer;
 				color: #fff;
 				text-decoration: none;
 				position: relative;
