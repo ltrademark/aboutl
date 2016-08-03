@@ -47,7 +47,7 @@ $(document).ready( function() {
 		$('body').css("overflow", "");
 	});
 
-	var hiddenSection = $('#more-links').height();
+	var hiddenSection = $('#more-links').height() + 5;
 	$('#more-links').css("height", hiddenSection + "px").addClass('ex-toggle');
 	$('.expand').click(function() {
 		$('#more-links').toggleClass('ex-toggle');
