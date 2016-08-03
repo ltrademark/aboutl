@@ -39,7 +39,7 @@ body, html {
 @twitter: #55acee;
 @text: #121212;
 @border: 1px solid #ccc;
-@transitionDefault: 0.2s ease all;
+@transitionDefault: 300s @bounce all;
 @bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 @swing: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 @avatar: url('https://secure.gravatar.com/avatar/e2a5b810db87d57c68e4712d8e9a6e00?size=500');
@@ -831,6 +831,7 @@ body, html {
 					outline: 0;
 					+ .charLimit {
 						opacity:1;
+						transform: translateY(0);
 					}
 				}
 			}
@@ -843,6 +844,7 @@ body, html {
 				font-size: 0.8em;
 				font-family: sans-serif;
 				transition: @transitionDefault;
+				transform: translateY(-10px);
 				@media (max-width: 786px) {
 					top: 0;
 					right: 5%;
