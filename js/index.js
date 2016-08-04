@@ -93,10 +93,11 @@ $(document).ready( function() {
 });
 
 function countChar(val) {
-	var limit = val.value.length;
-	var count = 140 - limit;
-	if (limit >= 140) {
-		val.value = val.value.substring(0, 140);
+	var val = val.value.length;
+	var limit = val;
+	var count = 124 - limit;
+	if (limit >= 124) {
+		val.value = val.value.substring(0, 124);
 	} else {
 		$('.charLimit').text(count);
 	}
