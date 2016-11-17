@@ -39,10 +39,25 @@ body, html {
 @twitter: #55acee;
 @text: #121212;
 @border: 1px solid #ccc;
-@transitionDefault: 300ms @bounce all;
+@transitionDefault: @far @material-curve all;
+@avatar: url('https://secure.gravatar.com/avatar/e2a5b810db87d57c68e4712d8e9a6e00?size=500');
+@near: 225ms;
+@far: 375ms;
 @bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 @swing: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-@avatar: url('https://secure.gravatar.com/avatar/e2a5b810db87d57c68e4712d8e9a6e00?size=500');
+@material-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
+@ease-in: cubic-bezier(0.4, 0.0, 1, 1);
+@ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+
+.cardSel(@bg: #fff;) {
+    background-color: @bg;
+    transition: all .25s ease-out;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgba(168,182,191,0.6);
+    &:hover {
+        box-shadow: 0 10px 20px 0 rgba(168,182,191,0.6);
+    }
+}
 
 //small branding
 @weightS: 20px;
@@ -628,12 +643,11 @@ body, html {
 			max-height: 400px;
 			width: 100%;
     	height: 100%;
-			background-color: #fff;
 			padding: 3%;
+			.cardSel;
 			border-radius: 3px;
-			box-shadow: 0 0 0 1px #ccc;
 	    box-sizing: border-box;
-			transition: 0.5s @swing all;
+			transition: all @material-curve @far;
 			.close {
 				position: absolute;
 				top: 5px;
@@ -979,67 +993,6 @@ footer {
 						box-shadow: inset 0 -20px 0 #fff;
 					}
 				}
-			}
-		}
-	}
-	.square-cash-modal {
-		opacity: 0;
-		visibility: hidden;
-		display: inline-block;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: fade(#fff, 85%);
-		transition: 0.3s ease all;
-		z-index: 15;
-		&.open {
-			visibility: visible;
-			opacity: 1;
-		}
-		.web-page-cont {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			display: inline-block;
-			width: 40%;
-			height: 90%;
-			border-radius: 3px;
-			box-shadow: 0 0 0 1px #ccc;
-	    box-sizing: border-box;
-			transition: 0.5s @bounce all;
-			.close {
-				position: absolute;
-				top: 5px;
-				right: 5px;
-				cursor: pointer;
-				color: #ccc;
-				transition: 0.3s ease all;
-				&:after {
-					content: 'close';
-					display: inline-block;
-					color: #121212;
-					float: left;
-					transform: translateX(10px);
-					font-family: 'Raleway', sans-serif;
-					margin-right: 5px;
-					line-height: 17px;
-					opacity: 0;
-					transition: @transitionDefault;
-				}
-				&:hover {
-					color: @green;
-					&:after {
-						opacity: 1;
-						transform: translateX(0);
-					}
-				}
-			}
-			iframe {
-				width: 100%;
-				height: 100%;
 			}
 		}
 	}
