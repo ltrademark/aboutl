@@ -1,10 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('../less/error.less');
 
 // defaults
 body, html {
 	width: 100%;
 	height: 100%;
+}
+* {
+	box-sizing: border-box;
 }
 :root {
 	font-size: 16px;
@@ -58,7 +62,10 @@ body, html {
         box-shadow: 0 10px 20px 0 rgba(168,182,191,0.6);
     }
 }
-
+.sq(@s) {
+	width: @s;
+	height: @s;
+}
 //small branding
 @weightS: 20px;
 @borderS: calc(@weightS / 7.5);
@@ -444,6 +451,11 @@ body, html {
 			}
 			.header {
 				padding-left: 20px;
+				@media (max-width: 786px) {
+					width: 100%;
+					text-align: center;
+					padding: 0 10px;
+				}
 				h1 {
 					user-select: none;
 					font-size: 3em;
@@ -475,6 +487,15 @@ body, html {
 					color: lighten(@text, 60%);
 					@media (max-width: 500px) {
 						font-size: 1em;
+						padding: 0;
+						&::after {
+							margin: 0 auto;
+							margin-top: 1ch;
+						}
+						a {
+							opacity: 1;
+					    transform: translate(10px, -10%);
+						}
 					}
 					&:after {
 						content:'';
@@ -710,6 +731,150 @@ body, html {
 	border: 0;
 	opacity: 0;
 }
+#instagramCarousel {
+	padding: 20px 0;
+	.post {
+		position: relative;
+		display: inline-block;
+		width: 300px;
+		height: 300px;
+		margin: 0 5px;
+		overflow: hidden;
+		cursor: pointer;
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+		&-parent {
+			position: relative;
+			width: 100%;
+			height: 300px;
+			padding: 10px 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: nowrap;
+			overflow: hidden;
+			&:hover {
+				.slide-controls {
+					opacity: 1;
+				}
+			}
+		}
+		&-child {
+			position: relative;
+			width: 100%;
+			width: 1550px;
+			height: 100%;
+			font-size: 0;
+		}
+	}
+	.slide-controls {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		height: 0;
+		display: flex;
+		justify-content: space-between;
+		padding: 0 10px;
+		opacity: 0;
+		transition: all @near @material-curve;
+		@media (max-width: 786px) {
+			opacity: 1;
+		}
+		span {
+			background-color: #fff;
+			border: 0;
+			.sq(50px);
+			transform: translateY(-50%);
+			border-radius: 50%;
+			text-align: center;
+			padding: 0;
+			line-height: 50px;
+			font-size: 1em;
+			outline: none;
+			cursor: pointer;
+			box-shadow: 0 5px 10px fade(#121212, 30%);
+			opacity: 0.54;
+			transition: all @near @material-curve;
+			i {
+				.sq(16px);
+			}
+			&:hover {
+				opacity: 1;
+				box-shadow: 0 10px 20px fade(#121212, 30%);
+			}
+			@media (max-width: 786px) {
+				opacity: 1;
+			}
+		}
+	}
+	.slick-list,
+	.slick-track {
+		height: 300px;
+		overflow: visible;
+	}
+
+	.instamodal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+		width: 100%;
+		height: 100%;
+		background-color: fade(#000, 80%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
+		transition: all @near @material-curve;
+    z-index: 7;
+		&.open {
+			opacity: 1;
+			visibility: visible;
+			.outbound-link {
+				transform: translateY(0px) scale(1);
+			}
+		}
+		.outbound-link {
+			display: block;
+			transition: all @near @material-curve;
+			transform: translateY(-130px) scale(0.6);
+			text-align: center;
+			text-decoration: none;
+			img {
+				width: 0 auto;
+				height: auto;
+				max-width: 100%;
+			}
+			p {
+				outline: none;
+				color: #fff;
+				max-width: 70%;
+				margin: 0 auto;
+				margin-top: 20px;
+				font-size: 1.4em;
+				line-height: 1.5;
+			}
+		}
+		.fa-close {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			font-size: 2em;
+			color: #fff;
+			cursor: pointer;
+		}
+	}
+}
+
 #work {
 	display: flex;
 	width: 100%;
@@ -815,7 +980,9 @@ body, html {
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
+	    display: flex;
 			@media (max-width: 786px) {
+				flex-wrap: wrap;
 				box-sizing: border-box;
 				padding: 0 10px;
 				width: 100%;

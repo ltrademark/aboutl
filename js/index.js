@@ -87,7 +87,8 @@ $(document).ready( function() {
 		}
 	}
 	$('a.popup').click(function(){
-		var url = $(this).attr('link');
+		event.preventDefault();
+		var url = $(this).attr('href');
 		PopupCenterDual(url,'','450','600');
 	});
 });
@@ -137,4 +138,47 @@ $('a[href*=#]:not([href=#])').click(function() {
 			return false;
 		}
 	}
+});
+// insta carousel stuff
+var userFeed = new Instafeed({
+	target: 'carousel',
+	get: 'user',
+	userId: '30896901',
+	clientId: 'e52feabf84334ac78c8a62660015032e',
+	accessToken: '30896901.1677ed0.1dfe37306d844afdafeb35d48bade908',
+	resolution: 'standard_resolution',
+	template: '<span class="post" sauce="{{link}}" cap="{{caption}}"><img src="{{image}}" /></span>',
+	sortBy: 'most-recent',
+	limit: 9
+});
+
+userFeed.run();
+
+setTimeout(function(){
+	$('.post-child').slick({
+		slidesToShow: 5,
+		autoplay: true,
+		autoplaySpeed: 3500,
+		prevArrow: '<span class="prev"><i class="fa fa-chevron-left"></i></span>',
+		nextArrow: '<span class="next"><i class="fa fa-chevron-right"></i></span>',
+		appendArrows: '.slide-controls'
+	});
+}, 1000);
+
+$('.post-child').on('init', function(slick){
+	$('#instagramCarousel').find('.post').on('click', function(){
+		var image = $(this).find('img').attr('src');
+		var url = $(this).attr('sauce');
+		var caption = $(this).attr('cap');
+
+		$('.instamodal').addClass('open').find('.outbound-link').attr('href',url).find('img').attr('src',image).next().text(caption);
+	});
+
+	$('.fa-close').click(function(){
+		$(this).parent().removeClass('open');
+		$(this).parent().find('.outbound-link').attr('href','#').find('img').attr('src','#');
+		setTimeout(function(){
+			$(this).parent().find('.outbound-link').find('p').text('');
+		}, 540);
+	});
 });
