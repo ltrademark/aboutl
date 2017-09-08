@@ -13,13 +13,13 @@ html, body {
 }
 
 ::-moz-selection {
-  color: #121212;
-  background: rgba(175, 211, 61, 0.12);
+  color: #fff;
+  background: #575757;
 }
 
 ::selection {
-  color: #121212;
-  background: rgba(175, 211, 61, 0.12);
+  color: #fff;
+  background: #575757;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -100,6 +100,14 @@ a {
   -webkit-transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+a::-moz-selection {
+  color: #fff;
+  background: #afd33d;
+}
+a::selection {
+  color: #fff;
+  background: #afd33d;
+}
 
 .ltm-emblem {
   cursor: pointer;
@@ -139,6 +147,7 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
+  background-image: url(https://www.transparenttextures.com/patterns/concrete-wall-2.png);
 }
 .hero .ltm-emblem {
   margin: 2em;

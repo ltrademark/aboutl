@@ -103,6 +103,10 @@ $me: url('https://secure.gravatar.com/avatar/e2a5b810db87d57c68e4712d8e9a6e00?si
 		font-family: 'Inconsolata', monospace;
 		color: darken($primary-accent, 10%);
 		@include transition;
+		&::selection {
+			color: #fff;
+			background: $green;
+		}
 	}
 }
 @mixin emblem($s: 4em) {
@@ -158,8 +162,8 @@ html, body {
 	box-sizing: border-box;
 }
 ::selection {
-	color: #121212;
-	background: rgba($green, .12);
+	color: #fff;
+	background: $text;
 }
 @include constants;
 @include emblem;
@@ -170,6 +174,7 @@ html, body {
 	left: 0;
 	right: 0;
 	bottom: 0;
+	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall-2.png);
 	.ltm-emblem {
 		margin: 2em;
 	}
