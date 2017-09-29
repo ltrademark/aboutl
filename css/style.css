@@ -4,8 +4,8 @@ html, body {
   width: 100%;
   height: 100%;
   font-size: calc(9.6px + 0.75vw);
-  background-color: #DFDFDF;
-  color: #575757;
+  background-color: #ffffff;
+  color: #121212;
 }
 
 * {
@@ -14,25 +14,24 @@ html, body {
 
 ::-moz-selection {
   color: #fff;
-  background: #575757;
+  background: #121212;
 }
 
 ::selection {
   color: #fff;
-  background: #575757;
+  background: #121212;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   position: relative;
   margin-top: 0;
-  color: #575757;
+  color: #121212;
 }
 
 h1, h2, h3 {
   font-family: 'Montserrat', Roboto, Sans-serif;
   letter-spacing: -0.035em;
   line-height: 0.75;
-  color: #434343;
   text-transform: uppercase;
   margin-bottom: 0.5em;
   font-weight: 800;
@@ -138,7 +137,7 @@ a::selection {
 .custom-svg svg {
   -webkit-transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
-  fill: #575757;
+  fill: #121212;
 }
 
 .hero {
@@ -147,7 +146,6 @@ a::selection {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(https://www.transparenttextures.com/patterns/concrete-wall-2.png);
 }
 .hero .ltm-emblem {
   margin: 2em;
@@ -158,6 +156,11 @@ a::selection {
   left: 0;
   -webkit-transform: translate(-1.2em, 0.5em);
           transform: translate(-1.2em, 0.5em);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
   -webkit-transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -182,6 +185,8 @@ a::selection {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .about .copy-container {
   padding: 2em;
@@ -277,7 +282,7 @@ a::selection {
           transition-delay: 300ms;
 }
 .about .copy-container .social-outbound ul li a {
-  color: #575757;
+  color: #121212;
   font-size: 2em;
 }
 .about .copy-container .social-outbound ul li a svg {
@@ -289,6 +294,46 @@ a::selection {
   font-family: 'Inconsolata', monospace;
   margin-top: 1em;
   font-size: 0.85em;
+}
+
+.message-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.message-form.open {
+  visibility: visible;
+  opacity: 1;
+}
+.message-form div,
+.message-form span {
+  width: 50%;
+}
+.message-form span {
+  display: inline-block;
+  margin-top: 1em;
+  cursor: pointer;
+  text-align: center;
 }
 
 @media screen and (max-width: 786px) {
@@ -330,6 +375,10 @@ a::selection {
   }
   .about .copy-container .footer {
     text-align: center;
+  }
+
+  .message-form span, .message-form div {
+    width: 100%;
   }
 }
 @media screen and (max-width: 562px) {

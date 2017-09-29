@@ -4,7 +4,7 @@
 // Lets set some standards, k?
 $green: #afd33d;
 $red: #D23131;
-$text: #575757;
+$text: #121212;
 $bg: #FDFDFD;
 $instagradient: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
 $colors: (primary: $green, accent: $red, text: $text, background: $bg);
@@ -55,7 +55,6 @@ $me: url('https://secure.gravatar.com/avatar/e2a5b810db87d57c68e4712d8e9a6e00?si
 		font-family: 'Montserrat', Roboto, Sans-serif;
 		letter-spacing: -0.035em;
 		line-height: 0.75;
-		color: #434343;
 		text-transform: uppercase;
 		margin-bottom: 0.5em;
 		font-weight: 800;
@@ -154,8 +153,7 @@ html, body {
 	width: 100%;
 	height: 100%;
 	font-size: $baseFont;
-	// @include background($unsplash, $a: fixed);
-	background-color: #DFDFDF;
+	background-color: #ffffff;
 	color: $text;
 }
 * {
@@ -174,7 +172,7 @@ html, body {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall-2.png);
+	// background-image: url(https://www.transparenttextures.com/patterns/concrete-wall-2.png);
 	.ltm-emblem {
 		margin: 2em;
 	}
@@ -183,6 +181,8 @@ html, body {
 		bottom: 0;
 		left: 0;
 		transform: translate(-1.2em, 0.5em);
+		user-select: none;
+		cursor: default;
 		@include transition;
 		&.fade {
 			opacity: 0.07;
@@ -200,6 +200,7 @@ html, body {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+	@include transition;
 	.copy-container {
 		padding: 2em;
 		width: 60%;
@@ -273,6 +274,35 @@ html, body {
 		}
 	}
 }
+.message-form {
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-direction: column;
+	padding: 1em;
+	visibility: hidden;
+	opacity: 0;
+	@include transition;
+	&.open {
+		visibility: visible;
+		opacity: 1;
+	}
+	div,
+	span {
+		width: 50%;
+	}
+	span {
+		display: inline-block;
+		margin-top: 1em;
+		cursor: pointer;
+		text-align: center;
+	}
+}
 // +mobile
 @media screen and (max-width: 786px) {
 	.about {
@@ -310,6 +340,11 @@ html, body {
 			.footer {
 				text-align: center;
 			}
+		}
+	}
+	.message-form {
+		span, div {
+			width: 100%;
 		}
 	}
 }
