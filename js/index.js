@@ -44,3 +44,14 @@ $('.dismiss-form').on('click', function(){
 	$('.about').css('opacity', '1');
 	$('.message-form').removeClass('open');
 });
+$('#thememain').on('click', function(){
+	$('.swatch').removeClass('current');
+	$(this).addClass('current');
+	$('html, body').attr('class','');
+});
+$('#theme1, #theme2, #theme3').on('click', function(){
+	var theme = $(this).attr('id');
+	$('.swatch').removeClass('current');
+	$(this).addClass('current');
+	$('html, body').attr('class','').addClass(theme);
+});

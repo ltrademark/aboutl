@@ -2,10 +2,62 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 // Lets set some standards, k?
+
+// Function Declarations
+@function font($to, $from, $toWidth, $fromWidth) {
+	$slope: ($to - $from) / ($toWidth - $fromWidth);
+	$base: $from - $slope * $fromWidth;
+
+	@return calc(#{$base} + #{100vw * $slope});
+}
+@function setcolor($pallet, $type) {
+    @return map-get(map-get($pallets, $pallet), $type);
+}
+
+// colors
 $green: #afd33d;
 $red: #D23131;
 $text: #121212;
 $bg: #FFFFFF;
+$pallets: (
+  main: (
+    bg: $bg, // white
+  	fg: $text // black
+  ),
+	p1: (
+		bg: #dff263, // manz
+		fg: #3b156d // scarlet gum
+	),
+	p2: (
+		bg: #c1d0d2, // Tiara
+		fg: #321f6c // Meteorite
+	),
+	p3: (
+		bg: #d0e0e9, // Botticelli
+		fg: #ea584a // Burnt Sienna
+	),
+	p4: (
+		bg: #e3dfdc, // Westar
+		fg: #360a5d // Violent violet
+	),
+	p5: (
+		bg: #83afb3, // Gulf Stream
+		fg: #4e4057 // Mulled Wine
+	),
+	p6: (
+		bg: #d8e1dd, // Nebula
+		fg: #4f3d5b // Mulled Wine
+	)
+	,
+	p7: (
+		bg: #a4be22, // Citron
+		fg: #4e3d59 // Mulled Wine
+	),
+	p8: (
+		bg: #d7c8cc, // Cold Turkey
+		fg: #49314d // Voodoo
+	)
+);
 $instagradient: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
 $colors: (primary: $green, accent: $red, text: $text, background: $bg);
 $links:(twitter: #1DA1F2, dribbble: #EA4C89, codepen: #000, instagram: #E4405F, vsco: #000, github: #181717);
@@ -15,6 +67,7 @@ $secondary-accent: map-get($colors, accent);
 $near: 225ms;
 $far: 375ms;
 $vfar: 600ms;
+$baseFont: font(24px, 12px, 1920px, 320px);
 $bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 $material-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
 $ease-in: cubic-bezier(0.4, 0.0, 1, 1);
@@ -32,6 +85,7 @@ $unsplash: url('#{$uurl}');
 $emblem: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/396624/LTM__logo.svg');
 $me: url('https://secure.gravatar.com/avatar/e2a5b810db87d57c68e4712d8e9a6e00?size=500');
 
+// Mixin Declarations
 @mixin transition($t: all, $d: $near, $i: $material-curve) {
 	transition: $t $d $i;
 }
@@ -64,9 +118,15 @@ $me: url('https://secure.gravatar.com/avatar/e2a5b810db87d57c68e4712d8e9a6e00?si
 		font-weight: 700;
 		line-height: 1;
 		margin-bottom: 0.5em;
+		i {
+			font-size: .7em;
+			display: inline-block;
+			vertical-align: baseline;
+		}
 		& + & {
+			color: rgba(map-get($colors, text), .54);
 			margin-top: -0.7em;
-			opacity: 0.54;
+			font-size: 1.5em;
 		}
 	}
 	@for $e from 1 through 6 {
@@ -81,6 +141,7 @@ $me: url('https://secure.gravatar.com/avatar/e2a5b810db87d57c68e4712d8e9a6e00?si
 		line-height: 1.5;
 		font-family: 'Inconsolata', monospace;
 		padding: 0 0.3em;
+		text-align: justify;
 		a {
 			&:hover {
 				color: darken($primary-accent, 20%);
@@ -116,7 +177,7 @@ $me: url('https://secure.gravatar.com/avatar/e2a5b810db87d57c68e4712d8e9a6e00?si
 		width: $s;
 		height: 0;
 		padding-bottom: $s;
-		opacity: 0.2;
+		opacity: 0.07;
 		margin: 0.3em 0.3em 2em 0.3em;
 		&:before {
 			content: '';
@@ -141,27 +202,53 @@ $me: url('https://secure.gravatar.com/avatar/e2a5b810db87d57c68e4712d8e9a6e00?si
 		}
 	}
 }
-@function font($to, $from, $toWidth, $fromWidth) {
-	$slope: ($to - $from) / ($toWidth - $fromWidth);
-	$base: $from - $slope * $fromWidth;
-
-	@return calc(#{$base} + #{100vw * $slope});
+@mixin theme($pallet, $dir: normal) {
+	@if $dir == inverted {
+		color: setcolor($pallet, bg);
+		background-color: setcolor($pallet, fg);
+	}
+	@if $dir == normal {
+		color: setcolor($pallet, fg);
+		background-color: setcolor($pallet, bg);	
+	}
 }
-$baseFont: font(24px, 12px, 1920px, 320px);
+
 /// --  doc body
 html, body {
 	width: 100%;
 	height: 100%;
 	font-size: $baseFont;
-	background-color: map-get($colors, background);
-	color: map-get($colors, text);
+	@include theme(main);
+	&.theme1 {
+		@include theme(p4);
+		h1, h2, h3, h4, h5, h6, p {
+			color: setcolor(p4, fg);
+		}
+	}
+	&.theme2 {
+		@include theme(p5);
+		h1, h2, h3, h4, h5, h6, p {
+			color: setcolor(p5, fg);
+		}
+		a {
+			color: $red;
+		}
+	}
+	&.theme3 {
+		@include theme(p7);
+		h1, h2, h3, h4, h5, h6, p {
+			color: setcolor(p7, fg);
+		}
+		a {
+			color: $red;
+		}
+	}
 }
 * {
 	box-sizing: border-box;
 }
 ::selection {
-	color: #fff;
-	background: map-get($colors, text);
+	@include theme(main, inverted);
 }
 @include constants;
 @include emblem;
@@ -172,9 +259,89 @@ html, body {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	// background-image: url(https://www.transparenttextures.com/patterns/concrete-wall-2.png);
-	.ltm-emblem {
-		margin: 2em;
+	&-corner {
+		display: inline-block;
+		&:hover {
+			.hero-corner-theme {
+				transform: translateX(0);
+			}
+		}
+		.ltm-emblem {
+			margin: 2em;
+		}
+		&-theme {
+			$spacing: calc(-100% - 2em);
+			display: block;
+			margin: 2em;
+			width: 2.3em;
+			margin-top: 0;
+			transform: translatex(#{$spacing});
+			@include transition;
+			.swatch {
+				position: relative;
+				cursor: pointer;
+				display: block;
+				width: 2em;
+				height: 2em;
+				margin: 1em 0;
+				border-radius: 50%;
+				background-color: #ccc;
+				box-shadow: inset 0 0 0 .2em rgba(#fff, .3);
+				@include transition;
+				transform: scale(1);
+				&:hover {
+					transform: scale(1.1);
+				}
+				&.current {
+					&:before {
+						content: '';
+						position: absolute;
+						top: 50%;
+						right: 100%;
+						transform: translatey(-50%);
+						border-color: transparent transparent transparent #ccc;
+						border-width: .5em;
+						border-style: solid;
+					}
+				}
+				&:nth-child(1) {
+					background-color: setcolor(main, bg);
+					box-shadow: inset 0 0 0 .2em rgba(setcolor(main, fg), .3);
+					&.current {
+						&:before {
+							border-color: transparent transparent transparent setcolor(main, fg);
+						}
+					}
+				}
+				&:nth-child(2) {
+					background-color: setcolor(p4, bg);
+					box-shadow: inset 0 0 0 .2em rgba(setcolor(p4, fg), .3);
+					&.current {
+						&:before {
+							border-color: transparent transparent transparent setcolor(p4, fg);
+						}
+					}
+				}
+				&:nth-child(3) {
+					background-color: setcolor(p5, bg);
+					box-shadow: inset 0 0 0 .2em rgba(setcolor(p5, fg), .3);
+					&.current {
+						&:before {
+							border-color: transparent transparent transparent setcolor(p5, fg);
+						}
+					}
+				}
+				&:nth-child(4) {
+					background-color: setcolor(p7, bg);
+					box-shadow: inset 0 0 0 .2em rgba(setcolor(p7, fg), .3);
+					&.current {
+						&:before {
+							border-color: transparent transparent transparent setcolor(p7, fg);
+						}
+					}
+				}
+			}
+		}
 	}
 	.main-content {
 		position: absolute;
@@ -220,10 +387,11 @@ html, body {
 					padding: 0;
 					display: inline-block;
 					text-align: center;
+					transform: translatey(0);
+					@include transition;
 					&:hover {
-						&:before {
-							transform: translate(-50%, -55%) scale(1);
-						}
+						transform: translatey(-5px);
+						transition-delay: 0;
 						a {
 							color: #4A705A;
 							@each $color in $social {
@@ -237,18 +405,6 @@ html, body {
 								}
 							}
 						}
-					}
-					&:before {
-						content:'';
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%, -55%) scale(0);
-						width: 3em;
-						height: 3em;
-						border-radius: 50%;
-						border: 1px dotted darken($primary-accent, 10%);
-						@include transition;
 					}
 					@for $i from 1 through 6 {
 						&:nth-child(#{$i}) {
@@ -269,7 +425,7 @@ html, body {
 		.footer {
 			text-align: right;
 			font-family: 'Inconsolata', monospace;
-			margin-top: 1em;
+			margin-top: 1.5em;
 			font-size: 0.85em;
 		}
 	}
@@ -305,8 +461,60 @@ html, body {
 		color: map-get($colors, primary);
 	}
 }
+
 // +mobile
 @media screen and (max-width: 786px) {
+	html, body {
+		&.theme1 {
+			.hero-corner-theme {
+				background-color: setcolor(p4, bg);
+				border: 2px solid setcolor(p4, fg);
+			}
+		}
+		&.theme2 {
+			.hero-corner-theme {
+				background-color: setcolor(p5, bg);
+				border: 2px solid setcolor(p5, fg);
+			}
+		}
+		&.theme3 {
+			.hero-corner-theme {
+				background-color: setcolor(p7, bg);
+				border: 2px solid setcolor(p7, fg);
+			}
+		}
+	}
+	.hero {
+		&-corner {
+			&:hover {
+				.hero-corner-theme {
+					transform: translatex(-50%) translatey(-5%);
+				}
+			}
+			&-theme {
+				position: absolute;
+				top:0;
+				left: 50%;
+				transform: translatex(-50%) translatey(-80%);
+				display: inline-block;
+				vertical-align: top;
+				margin: 0;
+				padding: 2em 0;
+				width: unset;
+				background-color: setcolor(main, bg);
+				border: 2px solid setcolor(main, fg);
+				.swatch {
+					display: inline-block;
+					margin: 0 1em;
+					transform-origin: center;
+					transform: rotate(-90deg);
+					&:hover {
+						transform: rotate(-90deg) scale(1.1);
+					}
+				}
+			}
+		}
+	}
 	.about {
 		align-items: flex-start;
 		padding-top: 5em;
