@@ -100,8 +100,8 @@ h4, h5, h6 {
   margin-bottom: 0.5em;
 }
 h4 i, h5 i, h6 i {
-  font-size: .7em;
-  display: inline-block;
+  font-size: .8em !important;
+  display: inline-block !important;
   vertical-align: baseline;
 }
 h4 + h4, h5 + h4, h6 + h4, h4 + h5, h5 + h5, h6 + h5, h4 + h6, h5 + h6, h6 + h6 {
@@ -498,52 +498,52 @@ a::selection {
 }
 
 @media screen and (max-width: 786px) {
-  html.theme1 .hero-corner-theme, body.theme1 .hero-corner-theme {
-    background-color: #121212;
-    border: 2px solid #FFFFFF;
-  }
-  html.theme2 .hero-corner-theme, body.theme2 .hero-corner-theme {
-    background-color: #462206;
-    border: 2px solid #c55103;
-  }
-  html.theme3 .hero-corner-theme, body.theme3 .hero-corner-theme {
-    background-color: #a4be22;
-    border: 2px solid #4e3d59;
-  }
-
-  .hero-corner:hover .hero-corner-theme {
-    -webkit-transform: translatex(-50%) translatey(-5%);
-            transform: translatex(-50%) translatey(-5%);
+  .hero-corner:hover .hero-corner-theme:after {
+    opacity: 0;
   }
   .hero-corner-theme {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    -webkit-transform: translatex(-50%) translatey(-80%);
-            transform: translatex(-50%) translatey(-80%);
-    display: inline-block;
+    position: relative;
     vertical-align: top;
     margin: 0;
-    padding: 2em 0;
-    width: unset;
-    background-color: #FFFFFF;
-    border: 2px solid #121212;
+    padding: 0;
+    width: 3em;
+  }
+  .hero-corner-theme:after {
+    content: "\f054";
+    position: absolute;
+    top: 0;
+    left: 150%;
+    margin-left: .5em;
+    font-family: FontAwesome;
+    font-size: 2em;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    color: inherit;
+    -webkit-transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: .34;
   }
   .hero-corner-theme .swatch {
-    display: inline-block;
-    margin: 0 1em;
+    border-radius: 0 1em 1em 0;
     -webkit-transform-origin: center;
             transform-origin: center;
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
+    -webkit-transform: translatex(-0.3em);
+            transform: translatex(-0.3em);
   }
-  .hero-corner-theme .swatch:hover {
-    -webkit-transform: rotate(-90deg) scale(1.1);
-            transform: rotate(-90deg) scale(1.1);
+  .hero-corner-theme .swatch:hover:before {
+    left: 0;
+    -webkit-transform: translatey(-50%) scale(0.9);
+            transform: translatey(-50%) scale(0.9);
+  }
+  .hero-corner-theme .swatch:before {
+    left: .1em;
+    right: unset;
   }
   .hero-corner-theme .swatch svg {
-    -webkit-transform: rotate(90deg) translatex(-50%);
-            transform: rotate(90deg) translatex(-50%);
+    width: 28px !important;
+    height: 14px !important;
+    left: 0;
+    right: unset;
     -webkit-transform-origin: center;
             transform-origin: center;
   }

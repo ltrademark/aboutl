@@ -36,6 +36,22 @@ $(window).scroll(function(){
 		$('body').velocity("stop");
 	}
 });
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+function setMetaColor() {
+	var bodyRGB = window.getComputedStyle(document.body, null).getPropertyValue('background-color'),
+			bRGBstrip = bodyRGB.replace('rgb','').replace('(', '').replace(')', '').split(','),
+			bodyHEX = rgbToHex(parseInt(bRGBstrip[0]), parseInt(bRGBstrip[1]), parseInt(bRGBstrip[2]));
+	document.head.getElementsByTagName('meta')[2].setAttribute('content', bodyHEX);
+	console.log(bodyHEX);
+}
+
 $('#messageForm').on('click', function(){
 	$('.about').css('opacity', '0');
 	$('.message-form').addClass('open');
@@ -48,10 +64,12 @@ $('#thememain').on('click', function(){
 	$('.swatch').removeClass('current');
 	$(this).addClass('current');
 	$('html, body').attr('class','');
+	setMetaColor();
 });
 $('#theme1, #theme2, #theme3').on('click', function(){
 	var theme = $(this).attr('id');
 	$('.swatch').removeClass('current');
 	$(this).addClass('current');
 	$('html, body').attr('class','').addClass(theme);
+	setMetaColor();
 });

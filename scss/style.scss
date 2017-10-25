@@ -123,8 +123,8 @@ $me: url('https://secure.gravatar.com/avatar/e2a5b810db87d57c68e4712d8e9a6e00?si
 		line-height: 1;
 		margin-bottom: 0.5em;
 		i {
-			font-size: .7em;
-			display: inline-block;
+			font-size: .8em !important;
+			display: inline-block !important;
 			vertical-align: baseline;
 		}
 		& + & {
@@ -516,55 +516,77 @@ html, body {
 
 // +mobile
 @media screen and (max-width: 786px) {
-	html, body {
-		&.theme1 {
-			.hero-corner-theme {
-				background-color: setcolor(main, fg);
-				border: 2px solid setcolor(main, bg);
-			}
-		}
-		&.theme2 {
-			.hero-corner-theme {
-				background-color: setcolor(hllwn, bg);
-				border: 2px solid setcolor(hllwn, fg);
-			}
-		}
-		&.theme3 {
-			.hero-corner-theme {
-				background-color: setcolor(p7, bg);
-				border: 2px solid setcolor(p7, fg);
-			}
-		}
-	}
+	// html, body {
+	// 	&.theme1 {
+	// 		.hero-corner-theme {
+	// 			background-color: setcolor(main, fg);
+	// 			border: 2px solid setcolor(main, bg);
+	// 		}
+	// 	}
+	// 	&.theme2 {
+	// 		.hero-corner-theme {
+	// 			background-color: setcolor(hllwn, bg);
+	// 			border: 2px solid setcolor(hllwn, fg);
+	// 		}
+	// 	}
+	// 	&.theme3 {
+	// 		.hero-corner-theme {
+	// 			background-color: setcolor(p7, bg);
+	// 			border: 2px solid setcolor(p7, fg);
+	// 		}
+	// 	}
+	// }
 	.hero {
 		&-corner {
 			&:hover {
 				.hero-corner-theme {
-					transform: translatex(-50%) translatey(-5%);
+					// transform: translatex(-50%) translatey(-5%);
+					&:after {
+						opacity: 0;
+					}
 				}
 			}
 			&-theme {
-				position: absolute;
-				top:0;
-				left: 50%;
-				transform: translatex(-50%) translatey(-80%);
-				display: inline-block;
+				position: relative;
 				vertical-align: top;
 				margin: 0;
-				padding: 2em 0;
-				width: unset;
-				background-color: setcolor(main, bg);
-				border: 2px solid setcolor(main, fg);
+				padding: 0;
+				width: 3em;
+				// background-color: setcolor(main, bg);
+				// border: 2px solid setcolor(main, fg);
+				&:after {
+					content: "\f054";
+					position: absolute;
+					top: 0;
+					left: 150%;
+					margin-left: .5em;
+					font-family: FontAwesome;
+					font-size: 2em;
+					text-rendering: auto;
+					-webkit-font-smoothing: antialiased;
+					color: inherit;
+					@include transition;
+					opacity: .34;
+				}
 				.swatch {
-					display: inline-block;
-					margin: 0 1em;
+					border-radius: 0 1em 1em 0;
 					transform-origin: center;
-					transform: rotate(-90deg);
-					&:hover {
-						transform: rotate(-90deg) scale(1.1);
+					transform: translatex(-.3em);
+					&:hover{
+						&:before {
+							left: 0;
+							transform: translatey(-50%) scale(.9);
+						}
+					}
+					&:before {
+						left: .1em;
+						right: unset;
 					}
 					svg {
-						transform: rotate(90deg) translatex(-50%);
+						width: 28px !important;
+						height: 14px !important;
+						left: 0;
+						right: unset;
 						transform-origin: center;
 					}
 				}
