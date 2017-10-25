@@ -56,6 +56,10 @@ $pallets: (
 	p8: (
 		bg: #d7c8cc, // Cold Turkey
 		fg: #49314d // Voodoo
+	),
+	hllwn: (
+		bg: #462206, // --
+		fg: #c55103 // Burnt Orange
 	)
 );
 $instagradient: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
@@ -220,24 +224,42 @@ html, body {
 	font-size: $baseFont;
 	@include theme(main);
 	&.theme1 {
-		@include theme(p4);
-		h1, h2, h3, h4, h5, h6, p {
-			color: setcolor(p4, fg);
+		@include theme(main, inverted);
+		h1, h2, h3, h4, h5, h6, p,
+		.about .copy-container .social-outbound ul li a {
+			color: setcolor(main, bg);
+			svg {
+				fill: setcolor(main, bg);
+			}
+		}
+		.ltm-emblem {
+			filter: brightness(100);
 		}
 	}
 	&.theme2 {
-		@include theme(p5);
-		h1, h2, h3, h4, h5, h6, p {
-			color: setcolor(p5, fg);
+		@include theme(hllwn);
+		h1, h2, h3, h4, h5, h6, p,
+		.about .copy-container .social-outbound ul li a{
+			color: setcolor(hllwn, fg);
+			svg {
+				fill: setcolor(hllwn, fg);
+			}
 		}
 		a {
-			color: $red;
+			color: $bg;
+		}
+		.ltm-emblem {
+			filter: brightness(100);
 		}
 	}
 	&.theme3 {
 		@include theme(p7);
-		h1, h2, h3, h4, h5, h6, p {
+		h1, h2, h3, h4, h5, h6, p,
+		.about .copy-container .social-outbound ul li a {
 			color: setcolor(p7, fg);
+			svg {
+				fill: setcolor(p7, fg);
+			}
 		}
 		a {
 			color: $red;
@@ -252,7 +274,17 @@ html, body {
 }
 @include constants;
 @include emblem;
-
+.hllwn-ghost {
+	position: absolute;
+	right: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-right: .2em;
+	opacity: 0;
+	path {
+		fill: #ccc;
+	}
+}
 .hero {
 	position: fixed;
 	top: 0;
@@ -289,19 +321,26 @@ html, body {
 				box-shadow: inset 0 0 0 .2em rgba(#fff, .3);
 				@include transition;
 				transform: scale(1);
+				&:before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					right: 100%;
+					transform: translatey(-50%);
+					border-color: transparent transparent transparent #ccc;
+					border-width: .5em;
+					border-style: solid;
+					opacity: 0;
+				}
 				&:hover {
 					transform: scale(1.1);
+					&:before {
+						opacity: .54;
+					}
 				}
 				&.current {
 					&:before {
-						content: '';
-						position: absolute;
-						top: 50%;
-						right: 100%;
-						transform: translatey(-50%);
-						border-color: transparent transparent transparent #ccc;
-						border-width: .5em;
-						border-style: solid;
+						opacity: 1;
 					}
 				}
 				&:nth-child(1) {
@@ -314,20 +353,34 @@ html, body {
 					}
 				}
 				&:nth-child(2) {
-					background-color: setcolor(p4, bg);
-					box-shadow: inset 0 0 0 .2em rgba(setcolor(p4, fg), .3);
+					background-color: setcolor(main, fg);
+					box-shadow: inset 0 0 0 .2em rgba(setcolor(main, bg), .3);
 					&.current {
 						&:before {
-							border-color: transparent transparent transparent setcolor(p4, fg);
+							border-color: transparent transparent transparent setcolor(main, bg);
 						}
 					}
 				}
 				&:nth-child(3) {
-					background-color: setcolor(p5, bg);
-					box-shadow: inset 0 0 0 .2em rgba(setcolor(p5, fg), .3);
+					background-color: setcolor(hllwn, bg);
+					box-shadow: inset 0 0 0 .2em rgba(setcolor(hllwn, fg), .3);
+					&:hover {
+						&:before {
+							display: none;
+						}
+						.hllwn-ghost {
+							opacity: .54;
+						}
+					}
 					&.current {
 						&:before {
-							border-color: transparent transparent transparent setcolor(p5, fg);
+							display: none;
+						}
+						.hllwn-ghost {
+							opacity: 1;
+							path {
+								fill: setcolor(hllwn, fg);
+							}
 						}
 					}
 				}
@@ -393,7 +446,6 @@ html, body {
 						transform: translatey(-5px);
 						transition-delay: 0;
 						a {
-							color: #4A705A;
 							@each $color in $social {
 								&[class*="#{$color}"] {
 									@if $color == vsco {
@@ -467,14 +519,14 @@ html, body {
 	html, body {
 		&.theme1 {
 			.hero-corner-theme {
-				background-color: setcolor(p4, bg);
-				border: 2px solid setcolor(p4, fg);
+				background-color: setcolor(main, fg);
+				border: 2px solid setcolor(main, bg);
 			}
 		}
 		&.theme2 {
 			.hero-corner-theme {
-				background-color: setcolor(p5, bg);
-				border: 2px solid setcolor(p5, fg);
+				background-color: setcolor(hllwn, bg);
+				border: 2px solid setcolor(hllwn, fg);
 			}
 		}
 		&.theme3 {
@@ -510,6 +562,10 @@ html, body {
 					transform: rotate(-90deg);
 					&:hover {
 						transform: rotate(-90deg) scale(1.1);
+					}
+					svg {
+						transform: rotate(90deg) translatex(-50%);
+						transform-origin: center;
 					}
 				}
 			}
