@@ -48,7 +48,7 @@ function setMetaColor() {
 	var bodyRGB = window.getComputedStyle(document.body, null).getPropertyValue('background-color'),
 			bRGBstrip = bodyRGB.replace('rgb','').replace('(', '').replace(')', '').split(','),
 			bodyHEX = rgbToHex(parseInt(bRGBstrip[0]), parseInt(bRGBstrip[1]), parseInt(bRGBstrip[2]));
-	document.head.getElementsByTagName('meta')[2].setAttribute('content', bodyHEX);
+	document.head.getElementsByTagName('meta')[1].setAttribute('content', bodyHEX);
 	console.log(bodyHEX);
 }
 
