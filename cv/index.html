@@ -1,62 +1,66 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>quick cv</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <meta charset="UTF-8">
+    <title>LTRDMRK | Leo Herrera</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
-      <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
-  
+
 </head>
 
 <body>
-  <section class="doc-body" id="minicv">
-	<div class="doc-body_content">
-		<div class="content-row about">
-			<div class="sticky-container">
-				<div class="avatar">
-					<img :src="cv.av" alt="Porfile photo">
-				</div>
-				<h1>Hello, I'm {{ cv.name }}</h1>
-				<p>{{ cv.desc_small }}</p>
-				<ul class="detail">
-					<li>
-						<div class="detail-col">Full Name</div>
-						<div class="detail-col">{{ cv.name_full }}</div>
-					</li>
-					<li>
-						<div class="detail-col">Occupation</div>
-						<div class="detail-col">{{ cv.occupation }}</div>
-					</li>
-					<li>
-						<div class="detail-col">Residing</div>
-						<div class="detail-col">{{ cv.residence }}</div>
-					</li>
-					<li>
-						<div class="detail-col">Social</div>
-						<div class="detail-col">
-							<a v-for="item in cv.social" :href="item.url" class="fa" :class="item.type ? 'fa-' + item.type : ''"></a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div class="content-row work">
-			<div class="work-block" v-for="job in cv.work">
-				<h1>{{ job.name }} <a v-if="job.url != ''" :href="job.url" class="fa fa-share-square-o" target="_blank"></a></h1>
-				<h2>{{ job.duration }}</h2>
-				<div v-html="job.description"></div>
-			</div>
-		</div>
-	</div>
-</section>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.4/vue.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.1/vue-resource.min.js'></script>
+    <section class="doc-body" id="minicv">
+        <div class="doc-body_content">
+            <div class="content-row about">
+                <div class="sticky-container">
+                    <div class="avatar">
+                        <img :src="cv.av" alt="Porfile photo">
+                    </div>
+                    <h1>Hello, I'm {{ cv.name }}</h1>
+                    <p>{{ cv.desc_small }}</p>
+                    <ul class="detail">
+                        <li>
+                            <div class="detail-col">Full Name</div>
+                            <div class="detail-col">{{ cv.name_full }}</div>
+                        </li>
+                        <li>
+                            <div class="detail-col">Occupation</div>
+                            <div class="detail-col">{{ cv.occupation }}</div>
+                        </li>
+                        <li>
+                            <div class="detail-col">Residing</div>
+                            <div class="detail-col">{{ cv.residence }}</div>
+                        </li>
+                        <li>
+                            <div class="detail-col">Social</div>
+                            <div class="detail-col">
+                                <a v-for="item in cv.social" :href="item.url" class="fa" :class="item.type ? 'fa-' + item.type : ''"></a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="content-row work">
+                    <div class="work-block" v-for="job in cv.work">
+                        <h1>{{ job.name }}
+                            <a v-if="job.url != ''" :href="job.url" class="fa fa-share-square-o" target="_blank"></a>
+                        </h1>
+                        <h2>{{ job.duration }}</h2>
+                        <div v-html="job.description"></div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.4/vue.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.1/vue-resource.min.js'></script>
 
-    <script  src="js/index.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
+
 </html>
