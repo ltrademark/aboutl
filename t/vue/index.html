@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Vuejs - Posting Data</title>
+  
+  
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+
+  
+  
+</head>
+
+<body>
+  <div id="vueApp">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>catbox api</h3>
+      </div>
+    </div> 
+    <!-- / row -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <label for="url">image</label>
+          <input type="file" id="url" ref="upload" class="form-control" value="" @change="onFileChange" />
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <a href="#" class="btn btn-success" @click="checkSauce">Check sources</a>
+      </div>
+    </div> <!-- / row -->
+    
+    <div>&nbsp;</div>
+    
+    <div class="row" v-if="debug">
+      <div class="col-sm-12">
+        <pre>{{ $data | json }}</pre>
+      </div>
+    </div>
+  
+  </div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.4/vue.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.1.16/vue-resource.min.js'></script>
+
+    <script  src="js/index.js"></script>
+
+</body>
+</html>

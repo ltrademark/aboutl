@@ -1,0 +1,50 @@
+Vue.http.options.emulateJSON = true; // send as 
+
+new Vue({
+  el: '#vueApp',
+  data: {
+    debug: true,
+    api: 'https://catbox.moe/user/api.php?',
+    url: 'https://pbs.twimg.com/profile_images/919360841895612416/14OQhNXi_400x400.jpg',
+    status: '',
+    postResults: []
+  },
+  methods: {
+    checkSauce: function(e) {
+      // this.catbox();
+    },
+    catbox: function() {
+      
+    },
+    onFileChange(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length)
+        return;
+      this.createImage(files[0]);
+    },
+    createImage(file) {
+      var image = new Image(),
+          objectURL = URL.createObjectURL(file);
+      var vm = this;
+
+      setTimeout(() => {
+        image.onload = () => {
+          vm.url = objectURL;
+        }
+        image.src = objectURL;
+        console.log(file)
+      }, 0);
+      vm.$http.post(vm.api, {
+        params: {
+          reqtype: 'fileToUpload', 
+          fileToUpload: file 
+        }
+      }).then(response => {
+        vm.postResults = response.body;
+        console.log(response);
+      },  response => {
+        console.log(response);
+      });
+    }
+  }
+});
