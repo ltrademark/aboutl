@@ -63,28 +63,19 @@ $unit) {
 // variables
 $near: 225ms;
 $far: 375ms;
-$bounce: cubic-bezier(0.68,
--0.55,
-0.265,
-1.55);
-$curve: cubic-bezier(0.4,
-0.0,
-0.2,
-1);
-$ease-in: cubic-bezier(0.4,
-0.0,
-1,
-1);
-$ease-out: cubic-bezier(0.0,
-0.0,
-0.2,
-1);
+$bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$curve: cubic-bezier(0.4, 0.0, 0.2, 1);
+$ease-in: cubic-bezier(0.4, 0.0, 1, 1);
+$ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+$snap: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 $small: 320 !default;
 $medium: 600 !default;
 $large: 720 !default;
-$breakpoints: ( small: $small+px,
-medium: $medium+px,
-large: $large+px);
+$breakpoints: ( 
+    small: $small+px,
+    medium: $medium+px,
+    large: $large+px
+);
 // mixins
 @mixin respond-to($breakpoint) {
     @if map-has-key($breakpoints,
