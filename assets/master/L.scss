@@ -24,10 +24,7 @@
     @return $num;
 }
 
-@function contrast($c,
-$darker,
-$lighter,
-$threshold: 50) {
+@function contrast($c, $darker, $lighter, $threshold: 50) {
     @if $threshold>100 {
         // @error "cant be over 100";
         $threshold: 100;
@@ -40,9 +37,7 @@ $threshold: 50) {
     }
 }
 
-@function randomNum($min,
-$max,
-$unit) {
+@function randomNum($min, $max, $unit) {
     $rand: random();
     $randomNum: $min + floor($rand * (($max - $min) + 1));
     @if $unit=='%' {
@@ -78,8 +73,7 @@ $breakpoints: (
 );
 // mixins
 @mixin respond-to($breakpoint) {
-    @if map-has-key($breakpoints,
-    $breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
         $value: map-get($breakpoints, $breakpoint);
         @media screen and (max-width: $value) {
             @content;
@@ -88,19 +82,23 @@ $breakpoints: (
     @warn "Unknown `#{$breakpoint}` in $breakpoints";
 }
 
-@mixin dotgrid($dot: #aaa,
-$dot-background: #000,
-$dot-size: 1px,
-$dot-spacing: 22px) {
+@mixin checker-board($color1: #ccc, $color2: #fff, $size: 50) {
+    background-color: $color2;
+    background-image: linear-gradient(45deg, $color1 25%, transparent 25%), 
+                      linear-gradient(-45deg, $color1 25%, transparent 25%), 
+                      linear-gradient(45deg, transparent 75%, $color1 75%), 
+                      linear-gradient(-45deg, transparent 75%, $color1 75%);
+    background-size: $size+0px $size+0px;
+    background-position: 0 0, 0 ($size / 2)+0px, ($size / 2)+px ($size / 2 * -1)+px, -($size / 2)+0px 0px;
+}
+
+@mixin dotgrid($dot: #aaa, $dot-background: #000, $dot-size: 1px, $dot-spacing: 22px) {
     background: linear-gradient(90deg, $dot-background ($dot-spacing - $dot-size), transparent 1%) center, linear-gradient($dot-background ($dot-spacing - $dot-size), transparent 1%) center, $dot;
     background-size: $dot-spacing $dot-spacing;
     background-position: center;
 }
 
-@mixin gradient-border($color1,
-$color2,
-$border-width,
-$direction) {
+@mixin gradient-border($color1, $color2, $border-width, $direction) {
     -webkit-appearance: none;
     border: none;
     background-repeat: no-repeat;
