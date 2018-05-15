@@ -1,144 +1,221 @@
 // functions
 @function font($to, $from, $toWidth, $fromWidth) {
-    $slope: ($to - $from) / ($toWidth - $fromWidth);
-    $base: $from - $slope * $fromWidth;
-    @return calc(#{$base} + #{100vw * $slope});
+  $slope: ($to - $from) / ($toWidth - $fromWidth);
+  $base: $from - $slope * $fromWidth;
+  @return calc(#{$base} + #{100vw * $slope});
 }
-
 @function shadow($depth, $c: #000) {
-    @if $depth>10 {
-        $depth: 10;
-        @warn "cant be greater than 10";
-    }
-    @return 0 $depth+px ($depth*2)+px rgba($c, (0.2 - $depth * .0002));
+  @if $depth>10 {
+    $depth: 10;
+    @warn 'cant be greater than 10';
+  }
+  @return 0 $depth + px ($depth * 2) + px rgba($c, (0.2 - $depth * 0.0002));
 }
-
 @function better-blur($radius) {
-    @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='a' x='0' y='0' width='1' height='1'%3E%3CfeGaussianBlur stdDeviation='#{$radius}' result='b'/%3E%3CfeMorphology operator='dilate' radius='#{$radius}'/%3E %3CfeMerge%3E%3CfeMergeNode/%3E%3CfeMergeNode in='b'/%3E%3C/feMerge%3E%3C/filter%3E%3C/svg%3E#a");
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='a' x='0' y='0' width='1' height='1'%3E%3CfeGaussianBlur stdDeviation='#{$radius}' result='b'/%3E%3CfeMorphology operator='dilate' radius='#{$radius}'/%3E %3CfeMerge%3E%3CfeMergeNode/%3E%3CfeMergeNode in='b'/%3E%3C/feMerge%3E%3C/filter%3E%3C/svg%3E#a");
 }
-
 @function unitstrip($num) {
-    @if type-of($num)=='number' and not unitless($num) {
-        @return $num / ($num * 0+1);
-    }
-    @return $num;
+  @if type-of($num) == 'number' and not unitless($num) {
+    @return $num / ($num * 0+1);
+  }
+  @return $num;
 }
-
 @function contrast($c, $darker, $lighter, $threshold: 50) {
-    @if $threshold>100 {
-        // @error "cant be over 100";
-        $threshold: 100;
-    }
-    @if (lightness($c)>$threshold) {
-        @return $darker;
-    }
-    @else {
-        @return $lighter;
-    }
+  @if $threshold>100 {
+    // @error "cant be over 100";
+    $threshold: 100;
+  }
+  @if (lightness($c) >$threshold) {
+    @return $darker;
+  } @else {
+    @return $lighter;
+  }
 }
-
 @function randomNum($min, $max, $unit) {
-    $rand: random();
-    $randomNum: $min + floor($rand * (($max - $min) + 1));
-    @if $unit=='%' {
-        @return $randomNum*1+$unit;
-    }
-    @if type-of($unit)=='number' {
-        @error 'unit must be px, pc, em, ch, %, in, cm, and so on.'
-    }
-    @return $randomNum+$unit;
+  $rand: random();
+  $randomNum: $min + floor($rand * (($max - $min) + 1));
+  @if $unit== '%' {
+    @return $randomNum * 1 + $unit;
+  }
+  @if type-of($unit) == 'number' {
+    @error 'unit must be px, pc, em, ch, %, in, cm, and so on.';
+  }
+  @return $randomNum + $unit;
 }
-
 @function hex() {
-    $smplHex: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f');
-    $randomHEX: ('#')+ nth($smplHex, random(length($smplHex)))+nth($smplHex, random(length($smplHex)))+nth($smplHex, random(length($smplHex)))+nth($smplHex, random(length($smplHex)))+nth($smplHex, random(length($smplHex)))+nth($smplHex, random(length($smplHex)));
-    @return unquote($randomHEX);
+  $smplHex: (
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f'
+  );
+  $randomHEX: ('#') + nth($smplHex, random(length($smplHex))) +
+    nth($smplHex, random(length($smplHex))) +
+    nth($smplHex, random(length($smplHex))) +
+    nth($smplHex, random(length($smplHex))) +
+    nth($smplHex, random(length($smplHex))) +
+    nth($smplHex, random(length($smplHex)));
+  @return unquote($randomHEX);
 }
 
 // variables
 $near: 225ms;
 $far: 375ms;
 $bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-$curve: cubic-bezier(0.4, 0.0, 0.2, 1);
-$ease-in: cubic-bezier(0.4, 0.0, 1, 1);
-$ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+$curve: cubic-bezier(0.4, 0, 0.2, 1);
+$ease-in: cubic-bezier(0.4, 0, 1, 1);
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
 $snap: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
 $small: 320 !default;
 $medium: 600 !default;
 $large: 720 !default;
-$breakpoints: ( 
-    small: $small+px,
-    medium: $medium+px,
-    large: $large+px
+$breakpoints: (
+  small: $small + px,
+  medium: $medium + px,
+  large: $large + px
 );
+
+// Typography
+$font-stack: (sans-serif);
 // mixins
 @mixin respond-to($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        $value: map-get($breakpoints, $breakpoint);
-        @media screen and (max-width: $value) {
-            @content;
-        }
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+    @media screen and (max-width: $value) {
+      @content;
     }
-    @warn "Unknown `#{$breakpoint}` in $breakpoints";
+  }
+  @warn 'Unknown `#{$breakpoint}` in $breakpoints';
 }
-
 @mixin checker-board($color1: #ccc, $color2: #fff, $size: 50) {
-    background-color: $color2;
-    background-image: linear-gradient(45deg, $color1 25%, transparent 25%), 
-                      linear-gradient(-45deg, $color1 25%, transparent 25%), 
-                      linear-gradient(45deg, transparent 75%, $color1 75%), 
-                      linear-gradient(-45deg, transparent 75%, $color1 75%);
-    background-size: $size+0px $size+0px;
-    background-position: 0 0, 0 ($size / 2)+0px, ($size / 2)+px ($size / 2 * -1)+px, -($size / 2)+0px 0px;
+  background-color: $color2;
+  background-image: linear-gradient(45deg, $color1 25%, transparent 25%),
+    linear-gradient(-45deg, $color1 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, $color1 75%),
+    linear-gradient(-45deg, transparent 75%, $color1 75%);
+  background-size: $size + 0px $size + 0px;
+  background-position: 0 0, 0 ($size / 2)+0px,
+    ($size / 2) + px ($size / 2 * -1) + px, -($size / 2)+0px 0px;
 }
-
-@mixin dotgrid($dot: #aaa, $dot-background: #000, $dot-size: 1px, $dot-spacing: 22px) {
-    background: linear-gradient(90deg, $dot-background ($dot-spacing - $dot-size), transparent 1%) center, linear-gradient($dot-background ($dot-spacing - $dot-size), transparent 1%) center, $dot;
-    background-size: $dot-spacing $dot-spacing;
-    background-position: center;
+@mixin dotgrid(
+  $dot: #aaa,
+  $dot-background: #000,
+  $dot-size: 1px,
+  $dot-spacing: 22px
+) {
+  background: linear-gradient(
+        90deg,
+        $dot-background ($dot-spacing - $dot-size),
+        transparent 1%
+      )
+      center,
+    linear-gradient($dot-background ($dot-spacing - $dot-size), transparent 1%)
+      center,
+    $dot;
+  background-size: $dot-spacing $dot-spacing;
+  background-position: center;
 }
-
 @mixin gradient-border($color1, $color2, $border-width, $direction) {
-    -webkit-appearance: none;
-    border: none;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(#{$direction},
-    $color1 0%,
-    $color2 100%),
-    linear-gradient(#{$direction},
-    $color1 0%,
-    $color2 100%);
-    @if $direction=='to right' or $direction=='to left' {
-        @if $direction=='to right' {
-            border-left: $border-width solid $color1;
-            border-right: $border-width solid $color2;
-        }
-        @else {
-            border-left: $border-width solid $color2;
-            border-right: $border-width solid $color1;
-        }
-        background-position: 0 0,
-        0 100%;
-        background-size: 100% $border-width;
+  -webkit-appearance: none;
+  border: none;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#{$direction}, $color1 0%, $color2 100%),
+    linear-gradient(#{$direction}, $color1 0%, $color2 100%);
+  @if $direction== 'to right' or $direction== 'to left' {
+    @if $direction== 'to right' {
+      border-left: $border-width solid $color1;
+      border-right: $border-width solid $color2;
+    } @else {
+      border-left: $border-width solid $color2;
+      border-right: $border-width solid $color1;
     }
-    @if $direction=='to top' or $direction=='to bottom' {
-        @if $direction=='to top' {
-            border-top: $border-width solid $color2;
-            border-bottom: $border-width solid $color1;
-        }
-        @else {
-            border-top: $border-width solid $color1;
-            border-bottom: $border-width solid $color2;
-        }
-        background-position: 0 0,
-        100% 0;
-        background-size: $border-width 100%;
+    background-position: 0 0, 0 100%;
+    background-size: 100% $border-width;
+  }
+  @if $direction== 'to top' or $direction== 'to bottom' {
+    @if $direction== 'to top' {
+      border-top: $border-width solid $color2;
+      border-bottom: $border-width solid $color1;
+    } @else {
+      border-top: $border-width solid $color1;
+      border-bottom: $border-width solid $color2;
     }
-    background-color: transparent;
-    outline: none;
-    &::-webkit-input-placeholder {
-        color: rgba(#fff, .2);
-        font-family: sans-serif;
-        transition: all 225ms ease-in-out;
+    background-position: 0 0, 100% 0;
+    background-size: $border-width 100%;
+  }
+  background-color: transparent;
+  outline: none;
+  &::-webkit-input-placeholder {
+    color: rgba(#fff, 0.2);
+    font-family: sans-serif;
+    transition: all 225ms ease-in-out;
+  }
+}
+@mixin grid($col: 4, $row: $col, $gWidth: 300px, $gHeight: $gWidth) {
+  $space: unquote(' ');
+  $templateCols: unquote('');
+  $templateRows: unquote('');
+  @for $i from 1 through $col {
+    $templateCols: $templateCols + $space $gWidth;
+  }
+  @for $i from 1 through $row {
+    $templateRows: $templateRows + $space $gHeight;
+  }
+  display: grid;
+  grid-template-columns: $templateCols;
+  grid-template-rows: $templateRows;
+  @content;
+}
+@mixin grid-pos($colStart, $colEnd, $rowStart, $rowEnd, $target: '') {
+  @if $target != '' {
+    #{$target} {
+      grid-column-start: $colStart;
+      grid-row-start: $rowStart;
+      grid-column-end: $colEnd;
+      grid-row-end: $rowEnd;
     }
+  } @else {
+    grid-column-start: $colStart;
+    grid-row-start: $rowStart;
+    grid-column-end: $colEnd;
+    grid-row-end: $rowEnd;
+  }
+}
+@mixin webkit-scrollbar($c: $white, $d: 'h', $s: 4) {
+  &::-webkit-scrollbar {
+    @if $d == 'h' {
+      width: $s + px;
+    }
+    @if $d == 'v' {
+      height: $s + px;
+    }
+    &-thumb {
+      background-color: rgba($c, 0.54);
+      border-radius: ($s / 2)+0px;
+    }
+    &-track {
+      background-color: rgba($c, 0.1);
+      border-radius: ($s / 2)+0px;
+    }
+  }
+}
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  min-height: $lines + 0em;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
