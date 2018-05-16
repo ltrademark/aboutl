@@ -164,7 +164,13 @@ $font-stack: (sans-serif);
     transition: all 225ms ease-in-out;
   }
 }
-@mixin grid($col: 4, $row: $col, $gWidth: 300px, $gHeight: $gWidth, $gap: 10px) {
+@mixin grid(
+  $col: 4,
+  $row: $col,
+  $gWidth: 300px,
+  $gHeight: $gWidth,
+  $gap: 10px
+) {
   $space: unquote(' ');
   $templateCols: unquote('');
   $templateRows: unquote('');
@@ -214,9 +220,16 @@ $font-stack: (sans-serif);
   }
 }
 @mixin line-clamp($lines) {
-  display: -webkit-box;
-  min-height: $lines + 0em;
-  -webkit-line-clamp: $lines;
-  -webkit-box-orient: vertical;
+  @if $lines < 2 {
+    display: inline-block;
+    height: $lines + 0em;
+    text-overflow: ellipses;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    height: $lines + 0em;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
   overflow: hidden;
 }
