@@ -164,7 +164,7 @@ $font-stack: (sans-serif);
     transition: all 225ms ease-in-out;
   }
 }
-@mixin grid($col: 4, $row: $col, $gWidth: 300px, $gHeight: $gWidth) {
+@mixin grid($col: 4, $row: $col, $gWidth: 300px, $gHeight: $gWidth, $gap: 10px) {
   $space: unquote(' ');
   $templateCols: unquote('');
   $templateRows: unquote('');
@@ -177,9 +177,10 @@ $font-stack: (sans-serif);
   display: grid;
   grid-template-columns: $templateCols;
   grid-template-rows: $templateRows;
+  grid-gap: $gap;
   @content;
 }
-@mixin grid-pos($colStart, $colEnd, $rowStart, $rowEnd, $target: '') {
+@mixin grid-pos($colStart, $rowStart, $colEnd, $rowEnd, $target: '') {
   @if $target != '' {
     #{$target} {
       grid-column-start: $colStart;
