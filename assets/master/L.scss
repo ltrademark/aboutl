@@ -4,6 +4,38 @@
   $base: $from - $slope * $fromWidth;
   @return calc(#{$base} + #{100vw * $slope});
 }
+@function convert($val, $base-font: $font-large) {
+  // This works in conjunction to the `font` function when sizing
+  // text, since its working off the basis of `1em` when converting.
+  //
+  // In order for this to work, a base/root font must be declared.
+  // This function defines the root font with $font-large in $base-font.
+  // That variable can be swapped for another variable.
+  @if type-of($base-font) == 'number' and not unitless($base-font) {
+    // This @if makes sure your base-font will always be a raw number.
+    $base-font: $base-font / ($base-font * 0 + 1);
+  }
+  @if unitless($val) {
+    // Here I makes sure you always include a unit. Current units
+    // supported are listed in the paren below.
+    @error $val + " needs a unit (px, em, rem)";
+  } @else {
+    @if unit($val) == 'px' {
+      // converts $val to em
+      $font-size: $val / ($val * 0 + 1);
+      @return ($font-size / $base-font)+0em;
+    }
+    @if unit($val) == 'em' or unit($val) == 'rem' {
+      // converts $val to px's
+      $font-size: $val / ($val * 0 + 1);
+      @return ($font-size * $base-font)+0px;
+    }
+  }
+}
+@function get-vw($object) {
+  $vw: (1024 * 0.01) * 1px;
+  @return ($object / $vw) * 1vw;
+}
 @function shadow($depth, $c: #000) {
   @if $depth>10 {
     $depth: 10;
@@ -43,24 +75,7 @@
   @return $randomNum + $unit;
 }
 @function hex() {
-  $smplHex: (
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f'
-  );
+  $smplHex: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f');
   $randomHEX: ('#') + nth($smplHex, random(length($smplHex))) +
     nth($smplHex, random(length($smplHex))) +
     nth($smplHex, random(length($smplHex))) +
