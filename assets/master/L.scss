@@ -95,21 +95,31 @@ $ease-out: cubic-bezier(0, 0, 0.2, 1);
 $snap: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
 $small: 320 !default;
-$medium: 600 !default;
-$large: 720 !default;
+$medium: 550 !default;
+$large: 768 !default;
+$xLarge: 1366 !default;
+$xxLarge: 1920 !default;
 $breakpoints: (
-  small: $small + px,
-  medium: $medium + px,
-  large: $large + px
+  'small': $small + 0px,
+  'medium': $medium + 0px,
+  'mobile': $large + 0px,
+  'desktop': $xLarge + 0px,
+  'retina': $xxLarge + 0px
 );
 
 // Typography
 $font-stack: (sans-serif);
 // mixins
-@mixin respond-to($breakpoint) {
+@mixin respond-to($breakpoint, $dir: 'desktop-first') {
   @if map-has-key($breakpoints, $breakpoint) {
     $value: map-get($breakpoints, $breakpoint);
-    @media screen and (max-width: $value) {
+    $width: '';
+    @if $dir == 'mobile-first' {
+      $width: unquote('min-width');
+    } @else {
+      $width: unquote('max-width');
+    }
+    @media screen and (#{$width}: $value) {
       @content;
     }
   }
