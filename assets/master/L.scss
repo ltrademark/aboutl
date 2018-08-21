@@ -258,3 +258,10 @@ $font-stack: (sans-serif);
   }
   overflow: hidden;
 }
+@mixin emboss($color, $size) {
+    $shadow: 0 0 0 $color;
+    @for $i from 1 through $size {
+        $shadow: #{$shadow}, #{$i}px #{$i}px #{$color};
+    }
+    text-shadow: $shadow;
+}
