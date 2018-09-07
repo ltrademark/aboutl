@@ -321,7 +321,7 @@ $grid-rows: 20px) {
         @for $i from 1 through length($heights-list) {
             $space: unquote('');
             &:nth-of-type(3n#{$space}+#{$i}) {
-                grid-row: auto/span nth($heights-list, $i) / $grid-rows;
+                grid-row: auto/span round(nth($heights-list, $i) / $grid-rows);
             }
         }
     }
