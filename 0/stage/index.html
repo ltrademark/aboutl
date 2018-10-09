@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>[dev] ltrdmrk.co v.4</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#191919">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div id="ltrademark">
+	<transition name="fade">
+		<section class="loader" v-if="!loaded">
+			<div class="loader-bar"></div>
+			<ltm color="#fff" dimensions="70px"></ltm>
+		</section>
+	</transition>
+	<section class="hero" v-if="loaded">
+		<div class="info-cont">
+			<ltm color="#fff" dimensions="70px"></ltm>
+			<p>Hi, my name is</p>
+			<h1>Leo Herrera.</h1>
+			<p>I'm a Full-Process Designer<a href="#0" @click.stop="fpModalToggle" title="Wth is a full-process designer?!">*</a> specializing in UX &amp; UI Design.<br />
+				I currently reside in {{ located }} where it's {{ weather }}&deg;{{ isAmerican ? 'f' : 'c'}}&nbsp;and&nbsp;{{ wCondition }}&nbsp;<i class="weather-icons" :class="wIcon" :style="wIcon === 'icon-31' ? 'font-size: 2.5em; vertical-align: -.1em; line-height: 0;' : ''"></i></p>
+			<p>and {{ isCurrentlyPlaying ? 'I\'m' : 'I\'ve just been'}} listening to <a :href="music_src" target="_blank">{{ recentlyPlayed }}</a> <audio-visualiser :playstate="isCurrentlyPlaying"></audio-visualiser></p>
+		</div>
+	</section>
+	<section class="work" v-if="loaded">
+		<h3>Works <sup>(in progress)</sup></h3>
+		<div class="work-cont">
+			<h1>User Experience Design</h1>
+			<ul>
+				<li v-for="item in work" v-if="item.category === 1">
+					<span>{{ item.title }}</span>
+					<p> {{ item.desc }}</p>
+					<a v-if="item.page" :href="item.page"><i class="material-icons">chevron_right</i></a>
+				</li>
+			</ul>
+			<h1>Graphic Design</h1>
+			<ul>
+				<li v-for="item in work" v-if="item.category === 2">
+					<span>{{ item.title }}</span>
+					<p> {{ item.desc }}</p>
+					<a v-if="item.page" :href="item.page">View Project</a>
+				</li>
+			</ul>
+			<h1>Front-End Development</h1>
+			<ul>
+				<li v-for="item in work" v-if="item.category === 3">
+					<span>{{ item.title }}</span>
+					<p> {{ item.desc }}</p>
+					<a v-if="item.page !== ''" :href="item.page">View Project</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section class="footer">
+		<p>2018 &copy; copyright Leo Herrrera. Ltrademark&reg; is a registered trademark and belongs to the aforementioned. All&nbsp;rights&nbsp;reserved.</p>
+		<p>Buy me a <a @click.stop="popup('http://cash.me/ltrademark/7', 400, 850)">beer</a> because that's what friends do</p>
+	</section>
+	<transition name="fade">
+		<modal v-if="fpModalOpen" title="What is a Full-Process Designer?" :close="fpModalToggle" :content="fpContent" :mobile="isMobile"></modal>
+	</transition>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.4/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.1/vue-resource.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js'></script>
+<script src='https://unpkg.com/feather-icons/dist/feather.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popmotion/4.3.4/popmotion.global.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
