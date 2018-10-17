@@ -1,268 +1,296 @@
 @import url(https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css);
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 @font-face {
-    font-family: 'weather';
-    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot');
-    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot?#iefix') format('embedded-opentype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.woff') format('woff'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.ttf') format('truetype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.svg#artill_clean_weather_iconsRg') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'weather';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot');
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot?#iefix') format('embedded-opentype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.woff') format('woff'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.ttf') format('truetype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.svg#artill_clean_weather_iconsRg') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 // vars
 $black: #000000;
 $white: #fafafa;
 $green: #afd33d;
-$gradient: linear-gradient(to right,
-$green,
-#0e4fcc,
-$green);
+$gradient: linear-gradient(to right, $green, #0e4fcc, $green);
 $near: 225ms;
 $far: 375ms;
 $padding: 20;
-$bounce: cubic-bezier(0.68,
--0.55,
-0.265,
-1.55);
-$snap: cubic-bezier(0.785,
-0.135,
-0.15,
-0.86);
-$curve: cubic-bezier(0.4,
-0.0,
-0.2,
-1);
-$ease-in: cubic-bezier(0.4,
-0.0,
-1,
-1);
-$ease-out: cubic-bezier(0.0,
-0.0,
-0.2,
-1);
-@mixin dotgrid($dot: #aaa,
-$dot-background: #000,
-$dot-size: 1px,
-$dot-spacing: $padding+0px) {
-    background: linear-gradient(90deg, $dot-background ($dot-spacing - $dot-size), transparent 1%) center, linear-gradient($dot-background ($dot-spacing - $dot-size), transparent 1%) center, $dot;
-    background-size: $dot-spacing $dot-spacing;
-    background-position: center;
+$bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$snap: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$curve: cubic-bezier(0.4, 0.0, 0.2, 1);
+$ease-in: cubic-bezier(0.4, 0.0, 1, 1);
+$ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+
+@mixin dotgrid($dot: #aaa, $dot-background: #000, $dot-size: 1px, $dot-spacing: $padding+0px) {
+  background: linear-gradient(90deg, $dot-background ($dot-spacing - $dot-size), transparent 1%) center, linear-gradient($dot-background ($dot-spacing - $dot-size), transparent 1%) center, $dot;
+  background-size: $dot-spacing $dot-spacing;
+  background-position: center;
 }
 
-@mixin scan($overscan,
-$rgb: true,
-$pixel: 2,
-$scan-opacity: .54) {
-    @if $rgb==true {
-        background-image: linear-gradient(rgba(blue, $scan-opacity), rgba(red, $scan-opacity), rgba(green, $scan-opacity), rgba(blue, $scan-opacity));
-        background-size: $pixel+0px $pixel+0px;
-        background-position: 0% 0%;
-        animation: scan 30s linear infinite;
+@mixin scan($overscan, $rgb: true, $pixel: 2, $scan-opacity: .54) {
+  @if $rgb==true {
+    background-image: linear-gradient(rgba(blue, $scan-opacity), rgba(red, $scan-opacity), rgba(green, $scan-opacity), rgba(blue, $scan-opacity));
+    background-size: $pixel+0px $pixel+0px;
+    background-position: 0% 0%;
+    animation: scan 30s linear infinite;
+  }
+
+  &:after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(transparent, rgba($overscan, .1), transparent);
+    background-size: ($pixel * 2)+0px ($pixel * 2)+0px;
+    background-position: 0% 0%;
+    animation: scan 30s linear infinite;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  @keyframes scan {
+    to {
+      background-position: 0% 100%;
     }
-    &:after {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: linear-gradient(transparent, rgba($overscan, .1), transparent);
-        background-size: ($pixel * 2)+0px ($pixel * 2)+0px;
-        background-position: 0% 0%;
-        animation: scan 30s linear infinite;
-        pointer-events: none;
-        z-index: 5;
-    }
-    @keyframes scan {
-        to {
-            background-position: 0% 100%;
-        }
-    }
+  }
 }
 
 @mixin weatherIcons() {
-    &.icon-0:before {
-        content: ":";
-    }
-    &.icon-1:before {
-        content: "p";
-    }
-    &.icon-2:before {
-        content: "S";
-    }
-    &.icon-3:before {
-        content: "Q";
-    }
-    &.icon-4:before {
-        content: "S";
-    }
-    &.icon-5:before {
-        content: "W";
-    }
-    &.icon-6:before {
-        content: "W";
-    }
-    &.icon-7:before {
-        content: "W";
-    }
-    &.icon-8:before {
-        content: "W";
-    }
-    &.icon-9:before {
-        content: "I";
-    }
-    &.icon-10:before {
-        content: "W";
-    }
-    &.icon-11:before {
-        content: "I";
-    }
-    &.icon-12:before {
-        content: "I";
-    }
-    &.icon-13:before {
-        content: "I";
-    }
-    &.icon-14:before {
-        content: "I";
-    }
-    &.icon-15:before {
-        content: "W";
-    }
-    &.icon-16:before {
-        content: "I";
-    }
-    &.icon-17:before {
-        content: "W";
-    }
-    &.icon-18:before {
-        content: "U";
-    }
-    &.icon-19:before {
-        content: "Z";
-    }
-    &.icon-20:before {
-        content: "Z";
-    }
-    &.icon-21:before {
-        content: "Z";
-    }
-    &.icon-22:before {
-        content: "Z";
-    }
-    &.icon-23:before {
-        content: "Z";
-    }
-    &.icon-24:before {
-        content: "E";
-    }
-    &.icon-25:before {
-        content: "E";
-    }
-    &.icon-26:before {
-        content: "3";
-    }
-    &.icon-27:before {
-        content: "a";
-    }
-    &.icon-28:before {
-        content: "A";
-    }
-    &.icon-29:before {
-        content: "a";
-    }
-    &.icon-30:before {
-        content: "A";
-    }
-    &.icon-31:before {
-        content: "6";
-    }
-    &.icon-32:before {
-        content: "1";
-    }
-    &.icon-33:before {
-        content: "6";
-    }
-    &.icon-34:before {
-        content: "1";
-    }
-    &.icon-35:before {
-        content: "W";
-    }
-    &.icon-36:before {
-        content: "1";
-    }
-    &.icon-37:before {
-        content: "S";
-    }
-    &.icon-38:before {
-        content: "S";
-    }
-    &.icon-39:before {
-        content: "S";
-    }
-    &.icon-40:before {
-        content: "M";
-    }
-    &.icon-41:before {
-        content: "W";
-    }
-    &.icon-42:before {
-        content: "I";
-    }
-    &.icon-43:before {
-        content: "W";
-    }
-    &.icon-44:before {
-        content: "a";
-    }
-    &.icon-45:before {
-        content: "S";
-    }
-    &.icon-46:before {
-        content: "U";
-    }
-    &.icon-47:before {
-        content: "S";
-    }
+  &.icon-0:before {
+    content: ":";
+  }
+
+  &.icon-1:before {
+    content: "p";
+  }
+
+  &.icon-2:before {
+    content: "S";
+  }
+
+  &.icon-3:before {
+    content: "Q";
+  }
+
+  &.icon-4:before {
+    content: "S";
+  }
+
+  &.icon-5:before {
+    content: "W";
+  }
+
+  &.icon-6:before {
+    content: "W";
+  }
+
+  &.icon-7:before {
+    content: "W";
+  }
+
+  &.icon-8:before {
+    content: "W";
+  }
+
+  &.icon-9:before {
+    content: "I";
+  }
+
+  &.icon-10:before {
+    content: "W";
+  }
+
+  &.icon-11:before {
+    content: "I";
+  }
+
+  &.icon-12:before {
+    content: "I";
+  }
+
+  &.icon-13:before {
+    content: "I";
+  }
+
+  &.icon-14:before {
+    content: "I";
+  }
+
+  &.icon-15:before {
+    content: "W";
+  }
+
+  &.icon-16:before {
+    content: "I";
+  }
+
+  &.icon-17:before {
+    content: "W";
+  }
+
+  &.icon-18:before {
+    content: "U";
+  }
+
+  &.icon-19:before {
+    content: "Z";
+  }
+
+  &.icon-20:before {
+    content: "Z";
+  }
+
+  &.icon-21:before {
+    content: "Z";
+  }
+
+  &.icon-22:before {
+    content: "Z";
+  }
+
+  &.icon-23:before {
+    content: "Z";
+  }
+
+  &.icon-24:before {
+    content: "E";
+  }
+
+  &.icon-25:before {
+    content: "E";
+  }
+
+  &.icon-26:before {
+    content: "3";
+  }
+
+  &.icon-27:before {
+    content: "a";
+  }
+
+  &.icon-28:before {
+    content: "A";
+  }
+
+  &.icon-29:before {
+    content: "a";
+  }
+
+  &.icon-30:before {
+    content: "A";
+  }
+
+  &.icon-31:before {
+    content: "6";
+  }
+
+  &.icon-32:before {
+    content: "1";
+  }
+
+  &.icon-33:before {
+    content: "6";
+  }
+
+  &.icon-34:before {
+    content: "1";
+  }
+
+  &.icon-35:before {
+    content: "W";
+  }
+
+  &.icon-36:before {
+    content: "1";
+  }
+
+  &.icon-37:before {
+    content: "S";
+  }
+
+  &.icon-38:before {
+    content: "S";
+  }
+
+  &.icon-39:before {
+    content: "S";
+  }
+
+  &.icon-40:before {
+    content: "M";
+  }
+
+  &.icon-41:before {
+    content: "W";
+  }
+
+  &.icon-42:before {
+    content: "I";
+  }
+
+  &.icon-43:before {
+    content: "W";
+  }
+
+  &.icon-44:before {
+    content: "a";
+  }
+
+  &.icon-45:before {
+    content: "S";
+  }
+
+  &.icon-46:before {
+    content: "U";
+  }
+
+  &.icon-47:before {
+    content: "S";
+  }
 }
 
 @mixin hide-on($point) {
-    @if $point==desktop {
-        @media screen and (min-width: 786px) {
-            display: none;
-        }
+  @if $point==desktop {
+    @media screen and (min-width: 786px) {
+      display: none;
     }
-    @if $point==mobile {
-        @media screen and (max-width: 786px) {
-            display: none;
-        }
+  }
+
+  @if $point==mobile {
+    @media screen and (max-width: 786px) {
+      display: none;
     }
+  }
 }
 
 * {
-    box-sizing: border-box;
-    font-smooth: never;
-    -webkit-font-smoothing: none;
-    text-rendering: geometricPrecision;
-    cursor: default;
+  box-sizing: border-box;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  text-rendering: geometricPrecision;
+  cursor: default;
 }
 
 ::selection {
-    background-color: transparent;
-    color: $green;
-    fill: $green;
+  background-color: transparent;
+  color: $green;
+  fill: $green;
 }
 
 html,
 body {
-    width: 100%;
-    height: 100%;
-    @include dotgrid($dot: lighten($black, 25%), $dot-background: $black);
+  width: 100%;
+  height: 100%;
+  @include dotgrid($dot: lighten($black, 25%), $dot-background: $black);
 }
 
 body {
-    @include scan($white,
-    $rgb: false);
+  @include scan($white,
+  $rgb: false);
 }
 
 h1,
@@ -272,9 +300,9 @@ h4,
 h5,
 h6,
 p {
-    position: relative;
-    display: block;
-    margin: 0;
+  position: relative;
+  display: block;
+  margin: 0;
 }
 
 h1,
@@ -283,344 +311,388 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: 1;
-    text-transform: capitalize;
-    margin: 0;
-    font-weight: 800;
+  line-height: 1;
+  text-transform: capitalize;
+  margin: 0;
+  font-weight: 800;
 }
 
 @for $e from 1 through 6 {
-    $reduce: $e / 2;
-    $size: 3.5em - $reduce;
-    h#{$e} {
-        font-size: $size;
-    }
+  $reduce: $e / 2;
+  $size: 3.5em - $reduce;
+
+  h#{$e} {
+    font-size: $size;
+  }
 }
 
 a {
-    cursor: pointer;
-    text-decoration: none;
-    color: $green;
-    &::selection {
-        color: $white;
-    }
+  cursor: pointer;
+  text-decoration: none;
+  color: $green;
+
+  &::selection {
+    color: $white;
+  }
 }
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity .5s $curve;
+  transition: opacity .5s $curve;
 }
 
 .fade-enter,
 .fade-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
 
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 10px;
-    background-color: rgba(#000, .8);
-    backdrop-filter: saturate(180%) blur(5px);
-    z-index: 3;
-    @media screen and (min-width: 786px) {
-        align-items: center;
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 10px;
+  background-color: rgba(#000, .8);
+  backdrop-filter: saturate(180%) blur(5px);
+  z-index: 3;
+
+  @media screen and (min-width: 786px) {
+    align-items: center;
+  }
 }
 
 .modal {
-    display: block;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    color: #fff;
-    @include dotgrid($dot: lighten($black, 25%), $dot-background: $black);
-    border: 1px solid $white;
-    &-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid $white;
-        min-height: 50px;
-        @media screen and (max-width: 786px) {
-            text-align: center;
-        }
-        h2 {
-            padding: 10px 20px;
-            font-size: 1.5em;
-        }
-        .modal-close {
-            @include hide-on(mobile);
-        }
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #fff;
+  @include dotgrid($dot: lighten($black, 25%), $dot-background: $black);
+  border: 1px solid $white;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $white;
+    min-height: 50px;
+
+    @media screen and (max-width: 786px) {
+      text-align: center;
     }
-    &-footer {
-        border-top: 1px solid $white;
-        min-height: 50px;
-        @include hide-on(desktop);
-        &--close {
-            cursor: pointer;
-            line-height: 50px;
-            text-align: center;
-            width: 100%;
-        }
+
+    h2 {
+      padding: 10px 20px;
+      font-size: 1.5em;
     }
-    &-body {
-        padding: 20px;
-        p {
-            +p {
-                margin-top: 20px;
-            }
-            svg {
-                display: inline-block;
-                vertical-align: -2px;
-                width: auto;
-                height: 1em;
-            }
-        }
+
+    .modal-close {
+      @include hide-on(mobile);
     }
-    &-close {
-        cursor: pointer;
-        font-size: 2em;
-        width: 50px;
-        line-height: 50px;
-        text-align: center;
-        font-style: normal;
-        color: rgba($white, .54);
-        border-left: 1px solid $white;
-        &:hover,
-        &:active {
-            opacity: 1;
-            background-color: rgba(#fff, .15);
-        }
+  }
+
+  &-footer {
+    border-top: 1px solid $white;
+    min-height: 50px;
+    @include hide-on(desktop);
+
+    &--close {
+      cursor: pointer;
+      line-height: 50px;
+      text-align: center;
+      width: 100%;
     }
+  }
+
+  &-body {
+    padding: 20px;
+
+    p {
+      +p {
+        margin-top: 20px;
+      }
+
+      svg {
+        display: inline-block;
+        vertical-align: -2px;
+        width: auto;
+        height: 1em;
+      }
+    }
+  }
+
+  &-close {
+    cursor: pointer;
+    font-size: 2em;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-style: normal;
+    color: rgba($white, .54);
+    border-left: 1px solid $white;
+
+    &:hover,
+    &:active {
+      opacity: 1;
+      background-color: rgba(#fff, .15);
+    }
+  }
 }
 
 .sound-vis {
-    position: relative;
-    height: 0;
-    display: inline-flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    &--small {
-        width: 30px;
-        height: 15px;
-        i {
-            width: 1px;
-        }
-    }
-    &.audio {
-        &-playing {
-            i {
-                transition: 600ms ease-in-out all;
-                height: 10%;
-                @for $r from 1 through 5 {
-                    &:nth-child(#{$r}) {
-                        animation: playing-#{$r} 5s linear infinite alternate;
-                    }
-                }
-            }
-        }
-        &-paused {
-            i {
-                height: 10%;
-                transition: 600ms ease-in-out all;
-            }
-        }
-    }
+  position: relative;
+  height: 0;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: flex-end;
+
+  &--small {
+    width: 30px;
+    height: 15px;
+
     i {
-        display: inline-block;
-        background-color: $white;
-        flex-shrink: 0;
-        flex-grow: 0;
-        flex-basis: 1px;
+      width: 1px;
+    }
+  }
+
+  &.audio {
+    &-playing {
+      i {
         transition: 600ms ease-in-out all;
-    }
-    @for $e from 1 through 5 {
-        @keyframes playing-#{$e} {
-            @for $i from 1 through 20 {
-                $percent: ($i * 5)*1%;
-                #{$percent} {
-                    height: random(100)*1%;
-                }
-            }
+        height: 10%;
+
+        @for $r from 1 through 5 {
+          &:nth-child(#{$r}) {
+            animation: playing-#{$r} 5s linear infinite alternate;
+          }
         }
+      }
     }
+
+    &-paused {
+      i {
+        height: 10%;
+        transition: 600ms ease-in-out all;
+      }
+    }
+  }
+
+  i {
+    display: inline-block;
+    background-color: $white;
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: 1px;
+    transition: 600ms ease-in-out all;
+  }
+
+  @for $e from 1 through 5 {
+    @keyframes playing-#{$e} {
+      @for $i from 1 through 20 {
+        $percent: ($i * 5)*1%;
+
+        #{$percent} {
+          height: random(100)*1%;
+        }
+      }
+    }
+  }
 }
 
 #ltrademark {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-family: "hack", monospace;
+
+  section {
     width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    overflow: hidden;
+
+    &.hero {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      // height: 100%;
+      .info-cont {
+        .ltm-emblem {
+          margin-bottom: 2em;
+        }
+
+        h1 {
+          margin: .2em 0;
+        }
+
+        p {
+          line-height: 1.4;
+        }
+      }
+
+      .weather-icons {
+        padding: 0;
+        display: inline-block;
+        font-size: 1.6em;
+        font-family: weather;
+        font-weight: normal;
+        font-style: normal;
+        margin-right: .1em;
+        line-height: 1;
+        @include weatherIcons();
+      }
+    }
+
+    &.footer {
+      text-align: center;
+      font-size: .76em;
+      opacity: 0.54;
+
+      p {
+        +p {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .loader {
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 100%;
-    color: #fff;
-    font-family: "hack", monospace;
-    section {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include dotgrid($dot: lighten($black, 25%), $dot-background: $black);
+    z-index: 2;
+
+    &-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background-image: $gradient;
+      background-size: 300% 5px;
+      background-position: 0% 0%;
+      animation: glow-left 2s ease-in-out infinite;
+    }
+  }
+
+  .work {
+    &-cont {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+
+      ul {
         width: 100%;
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 40px;
-        overflow: hidden;
-        &.hero {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            // height: 100%;
-            .info-cont {
-                .ltm-emblem {
-                    margin-bottom: 2em;
-                }
-                h1 {
-                    margin: .2em 0;
-                }
-                p {
-                    line-height: 1.4;
-                }
+        margin: 0;
+        margin-top: $padding+0px;
+        padding: 0;
+        padding-left: $padding+0px;
+        list-style-type: none;
+
+        li {
+          position: relative;
+          font-size: 8px;
+          padding-right: 20vw;
+
+          +li {
+            margin-top: $padding+0px;
+            ;
+          }
+
+          &:hover {
+            a {
+              visibility: visible;
+              opacity: 1;
             }
-            .weather-icons {
-                padding: 0;
-                display: inline-block;
-                font-size: 1.6em;
-                font-family: weather;
-                font-weight: normal;
-                font-style: normal;
-                margin-right: .1em;
-                line-height: 1;
-                @include weatherIcons();
-            }
-        }
-        &.footer {
-            text-align: center;
-            font-size: .76em;
-            opacity: 0.54;
-            p {
-                +p {
-                    margin-top: 10px;
-                }
-            }
-        }
-    }
-    .loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        max-width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        @include dotgrid($dot: lighten($black, 25%), $dot-background: $black);
-        z-index: 2;
-        &-bar {
+          }
+
+          span {
+            font-weight: 900;
+            font-size: 3.5em;
+          }
+
+          p {
+            font-size: 2em;
+            margin-top: 5px;
+            opacity: .6;
+          }
+
+          a {
+            visibility: hidden;
+            opacity: 0;
             position: absolute;
-            top: 0;
-            left: 0;
+            bottom: 0;
             right: 0;
-            height: 5px;
-            background-image: $gradient;
-            background-size: 300% 5px;
-            background-position: 0% 0%;
-            animation: glow-left 2s ease-in-out infinite;
-        }
-    }
-    .work {
-        &-cont {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            ul {
-                width: 100%;
-                margin: 0;
-                margin-top: $padding+0px;
-                padding: 0;
-                padding-left: $padding+0px;
-                list-style-type: none;
-                li {
-                    position: relative;
-                    font-size: 8px;
-                    padding-right: 20vw;
-                    +li {
-                        margin-top: $padding+0px;
-                        ;
-                    }
-                    &:hover {
-                        a {
-                            visibility: visible;
-                            opacity: 1;
-                        }
-                    }
-                    span {
-                        font-weight: 900;
-                        font-size: 3.5em;
-                    }
-                    p {
-                        font-size: 2em;
-                        margin-top: 5px;
-                        opacity: .6;
-                    }
-                    a {
-                        visibility: hidden;
-                        opacity: 0;
-                        position: absolute;
-                        bottom: 0;
-                        right: 0;
-                        border: 1px dashed $green;
-                        padding: 15px;
-                        font-size: 1.5em;
-                        text-align: right;
-                        transition: $near $curve all;
-                        i {
-                            cursor: inherit;
-                            display: inline-block;
-                            vertical-align: middle;
-                        }
-                    }
-                }
-                +h1 {
-                    margin-top: ($padding * 2)+0px;
-                }
+            border: 1px dashed $green;
+            padding: 15px;
+            font-size: 1.5em;
+            text-align: right;
+            transition: $near $curve all;
+
+            i {
+              cursor: inherit;
+              display: inline-block;
+              vertical-align: middle;
             }
+          }
         }
+
+        +h1 {
+          margin-top: ($padding * 2)+0px;
+        }
+      }
     }
+  }
 }
 
 @keyframes glow-left {
-    to {
-        background-position: -300% 0%;
-    }
+  to {
+    background-position: -300% 0%;
+  }
 }
 
 // like smartwatch size. p small
 @media screen and (max-width: 290px) {
-    #ltrademark {
-        section {
-            display: none !important;
-        }
-        &:before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            @include dotgrid($dot: #F78282, $dot-background: #7A0000);
-        }
-        &:after {
-            content: 'oh no \ Screen \ too smol';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            font-size: 10vw;
-            font-weight: 900;
-            text-align: center;
-            line-height: 1;
-        }
+  #ltrademark {
+    section {
+      display: none !important;
     }
+
+    &:before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @include dotgrid($dot: #F78282, $dot-background: #7A0000);
+    }
+
+    &:after {
+      content: 'oh no \ Screen \ too smol';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 10vw;
+      font-weight: 900;
+      text-align: center;
+      line-height: 1;
+    }
+  }
 }
