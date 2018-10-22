@@ -1,5 +1,6 @@
-@import url(https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css);
+@import url('https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "../../../assets/master/_L.scss";
 
 @font-face {
   font-family: 'weather';
@@ -269,7 +270,6 @@ $ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
 
 * {
   box-sizing: border-box;
-  font-smooth: never;
   -webkit-font-smoothing: none;
   text-rendering: geometricPrecision;
   cursor: default;
@@ -362,7 +362,7 @@ a {
   backdrop-filter: saturate(180%) blur(5px);
   z-index: 3;
 
-  @media screen and (min-width: 786px) {
+  @include respond-to('mobile', 'mobile-first') {
     align-items: center;
   }
 }
