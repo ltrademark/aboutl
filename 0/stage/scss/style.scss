@@ -23,6 +23,8 @@ $snap: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 $curve: cubic-bezier(0.4, 0.0, 0.2, 1);
 $ease-in: cubic-bezier(0.4, 0.0, 1, 1);
 $ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+$font-stack: ("hack",
+monospace);
 
 @mixin dotgrid($dot: #aaa, $dot-background: #000, $dot-size: 1px, $dot-spacing: $padding+0px) {
   background: linear-gradient(90deg, $dot-background ($dot-spacing - $dot-size), transparent 1%) center, linear-gradient($dot-background ($dot-spacing - $dot-size), transparent 1%) center, $dot;
@@ -281,6 +283,10 @@ $ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
   fill: $green;
 }
 
+:root {
+  font-family: $font-stack;
+}
+
 html,
 body {
   width: 100%;
@@ -509,7 +515,6 @@ a {
   width: 100%;
   height: 100%;
   color: #fff;
-  font-family: "hack", monospace;
 
   section {
     width: 100%;
@@ -586,6 +591,26 @@ a {
       background-size: 300% 5px;
       background-position: 0% 0%;
       animation: glow-left 2s ease-in-out infinite;
+    }
+  }
+
+  .social {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+
+        +li {
+          margin-left: 10px;
+        }
+      }
     }
   }
 

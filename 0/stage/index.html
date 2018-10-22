@@ -63,7 +63,12 @@ leo@ltrdmrk.co
         </p>
       </div>
     </section>
-    <section class="work" v-if="loaded">
+    <section class="social" v-if="loaded">
+      <ul>
+        <li v-for="social in networks"><a :href="social.url" :class="'fa fa-' + social.type"></a></li>
+      </ul>
+    </section>
+    <!-- <section class="work" v-if="loaded">
       <h3>Works <sup>(in progress)</sup></h3>
       <div class="work-cont">
         <h1>User Experience Design</h1>
@@ -91,7 +96,7 @@ leo@ltrdmrk.co
           </li>
         </ul>
       </div>
-    </section>
+    </section> -->
     <section class="footer">
       <p>
         2018 &copy; copyright Leo Herrrera. Ltrademark&reg; is a registered trademark and belongs to the
