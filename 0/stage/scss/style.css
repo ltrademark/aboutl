@@ -342,631 +342,631 @@ a::selection {
 
 @-webkit-keyframes playing-1 {
   5% {
-    height: 89%;
+    height: 34%;
   }
   10% {
-    height: 39%;
+    height: 79%;
   }
   15% {
-    height: 24%;
-  }
-  20% {
-    height: 44%;
-  }
-  25% {
-    height: 46%;
-  }
-  30% {
-    height: 80%;
-  }
-  35% {
-    height: 15%;
-  }
-  40% {
     height: 12%;
   }
+  20% {
+    height: 79%;
+  }
+  25% {
+    height: 40%;
+  }
+  30% {
+    height: 84%;
+  }
+  35% {
+    height: 1%;
+  }
+  40% {
+    height: 94%;
+  }
   45% {
-    height: 99%;
+    height: 100%;
   }
   50% {
-    height: 31%;
+    height: 88%;
   }
   55% {
-    height: 63%;
+    height: 68%;
   }
   60% {
-    height: 6%;
+    height: 18%;
   }
   65% {
-    height: 9%;
+    height: 26%;
   }
   70% {
-    height: 15%;
+    height: 94%;
   }
   75% {
-    height: 67%;
+    height: 47%;
   }
   80% {
-    height: 17%;
-  }
-  85% {
-    height: 44%;
-  }
-  90% {
-    height: 23%;
-  }
-  95% {
     height: 2%;
   }
+  85% {
+    height: 97%;
+  }
+  90% {
+    height: 18%;
+  }
+  95% {
+    height: 27%;
+  }
   100% {
-    height: 1%;
+    height: 55%;
   }
 }
 
 @keyframes playing-1 {
   5% {
-    height: 89%;
+    height: 34%;
   }
   10% {
-    height: 39%;
+    height: 79%;
   }
   15% {
-    height: 24%;
-  }
-  20% {
-    height: 44%;
-  }
-  25% {
-    height: 46%;
-  }
-  30% {
-    height: 80%;
-  }
-  35% {
-    height: 15%;
-  }
-  40% {
     height: 12%;
   }
+  20% {
+    height: 79%;
+  }
+  25% {
+    height: 40%;
+  }
+  30% {
+    height: 84%;
+  }
+  35% {
+    height: 1%;
+  }
+  40% {
+    height: 94%;
+  }
   45% {
-    height: 99%;
+    height: 100%;
   }
   50% {
-    height: 31%;
+    height: 88%;
   }
   55% {
-    height: 63%;
+    height: 68%;
   }
   60% {
-    height: 6%;
+    height: 18%;
   }
   65% {
-    height: 9%;
+    height: 26%;
   }
   70% {
-    height: 15%;
+    height: 94%;
   }
   75% {
-    height: 67%;
+    height: 47%;
   }
   80% {
-    height: 17%;
+    height: 2%;
   }
   85% {
-    height: 44%;
+    height: 97%;
   }
   90% {
-    height: 23%;
+    height: 18%;
   }
   95% {
+    height: 27%;
+  }
+  100% {
+    height: 55%;
+  }
+}
+
+@-webkit-keyframes playing-2 {
+  5% {
+    height: 56%;
+  }
+  10% {
+    height: 37%;
+  }
+  15% {
+    height: 76%;
+  }
+  20% {
+    height: 48%;
+  }
+  25% {
+    height: 15%;
+  }
+  30% {
+    height: 88%;
+  }
+  35% {
+    height: 71%;
+  }
+  40% {
     height: 2%;
+  }
+  45% {
+    height: 67%;
+  }
+  50% {
+    height: 61%;
+  }
+  55% {
+    height: 96%;
+  }
+  60% {
+    height: 58%;
+  }
+  65% {
+    height: 52%;
+  }
+  70% {
+    height: 40%;
+  }
+  75% {
+    height: 5%;
+  }
+  80% {
+    height: 12%;
+  }
+  85% {
+    height: 84%;
+  }
+  90% {
+    height: 97%;
+  }
+  95% {
+    height: 14%;
   }
   100% {
     height: 1%;
   }
 }
 
-@-webkit-keyframes playing-2 {
-  5% {
-    height: 95%;
-  }
-  10% {
-    height: 31%;
-  }
-  15% {
-    height: 60%;
-  }
-  20% {
-    height: 35%;
-  }
-  25% {
-    height: 68%;
-  }
-  30% {
-    height: 47%;
-  }
-  35% {
-    height: 58%;
-  }
-  40% {
-    height: 2%;
-  }
-  45% {
-    height: 33%;
-  }
-  50% {
-    height: 95%;
-  }
-  55% {
-    height: 57%;
-  }
-  60% {
-    height: 16%;
-  }
-  65% {
-    height: 45%;
-  }
-  70% {
-    height: 33%;
-  }
-  75% {
-    height: 65%;
-  }
-  80% {
-    height: 23%;
-  }
-  85% {
-    height: 56%;
-  }
-  90% {
-    height: 49%;
-  }
-  95% {
-    height: 90%;
-  }
-  100% {
-    height: 89%;
-  }
-}
-
 @keyframes playing-2 {
   5% {
-    height: 95%;
+    height: 56%;
   }
   10% {
-    height: 31%;
+    height: 37%;
   }
   15% {
-    height: 60%;
+    height: 76%;
   }
   20% {
-    height: 35%;
+    height: 48%;
   }
   25% {
-    height: 68%;
+    height: 15%;
   }
   30% {
-    height: 47%;
+    height: 88%;
   }
   35% {
-    height: 58%;
+    height: 71%;
   }
   40% {
     height: 2%;
   }
   45% {
-    height: 33%;
+    height: 67%;
   }
   50% {
-    height: 95%;
+    height: 61%;
   }
   55% {
-    height: 57%;
+    height: 96%;
   }
   60% {
-    height: 16%;
+    height: 58%;
   }
   65% {
-    height: 45%;
+    height: 52%;
   }
   70% {
-    height: 33%;
+    height: 40%;
   }
   75% {
-    height: 65%;
+    height: 5%;
   }
   80% {
-    height: 23%;
+    height: 12%;
   }
   85% {
-    height: 56%;
+    height: 84%;
   }
   90% {
-    height: 49%;
+    height: 97%;
   }
   95% {
-    height: 90%;
+    height: 14%;
   }
   100% {
-    height: 89%;
+    height: 1%;
   }
 }
 
 @-webkit-keyframes playing-3 {
   5% {
-    height: 17%;
+    height: 77%;
   }
   10% {
-    height: 88%;
-  }
-  15% {
-    height: 60%;
-  }
-  20% {
-    height: 53%;
-  }
-  25% {
-    height: 38%;
-  }
-  30% {
-    height: 57%;
-  }
-  35% {
-    height: 73%;
-  }
-  40% {
-    height: 39%;
-  }
-  45% {
     height: 35%;
   }
-  50% {
-    height: 15%;
+  15% {
+    height: 5%;
   }
-  55% {
-    height: 62%;
-  }
-  60% {
+  20% {
     height: 98%;
   }
-  65% {
-    height: 17%;
+  25% {
+    height: 71%;
   }
-  70% {
-    height: 68%;
+  30% {
+    height: 48%;
   }
-  75% {
+  35% {
+    height: 70%;
+  }
+  40% {
+    height: 21%;
+  }
+  45% {
     height: 58%;
   }
-  80% {
+  50% {
+    height: 77%;
+  }
+  55% {
     height: 13%;
   }
-  85% {
-    height: 64%;
+  60% {
+    height: 12%;
   }
-  90% {
-    height: 76%;
+  65% {
+    height: 41%;
   }
-  95% {
+  70% {
     height: 72%;
   }
+  75% {
+    height: 72%;
+  }
+  80% {
+    height: 76%;
+  }
+  85% {
+    height: 24%;
+  }
+  90% {
+    height: 100%;
+  }
+  95% {
+    height: 21%;
+  }
   100% {
-    height: 96%;
+    height: 86%;
   }
 }
 
 @keyframes playing-3 {
   5% {
-    height: 17%;
+    height: 77%;
   }
   10% {
-    height: 88%;
-  }
-  15% {
-    height: 60%;
-  }
-  20% {
-    height: 53%;
-  }
-  25% {
-    height: 38%;
-  }
-  30% {
-    height: 57%;
-  }
-  35% {
-    height: 73%;
-  }
-  40% {
-    height: 39%;
-  }
-  45% {
     height: 35%;
   }
-  50% {
-    height: 15%;
+  15% {
+    height: 5%;
   }
-  55% {
-    height: 62%;
-  }
-  60% {
+  20% {
     height: 98%;
   }
-  65% {
-    height: 17%;
+  25% {
+    height: 71%;
   }
-  70% {
-    height: 68%;
+  30% {
+    height: 48%;
   }
-  75% {
+  35% {
+    height: 70%;
+  }
+  40% {
+    height: 21%;
+  }
+  45% {
     height: 58%;
   }
-  80% {
+  50% {
+    height: 77%;
+  }
+  55% {
     height: 13%;
   }
-  85% {
-    height: 64%;
+  60% {
+    height: 12%;
   }
-  90% {
-    height: 76%;
+  65% {
+    height: 41%;
   }
-  95% {
+  70% {
     height: 72%;
   }
+  75% {
+    height: 72%;
+  }
+  80% {
+    height: 76%;
+  }
+  85% {
+    height: 24%;
+  }
+  90% {
+    height: 100%;
+  }
+  95% {
+    height: 21%;
+  }
   100% {
-    height: 96%;
+    height: 86%;
   }
 }
 
 @-webkit-keyframes playing-4 {
   5% {
-    height: 62%;
+    height: 10%;
   }
   10% {
-    height: 29%;
+    height: 2%;
   }
   15% {
-    height: 65%;
+    height: 80%;
   }
   20% {
-    height: 96%;
+    height: 52%;
   }
   25% {
-    height: 18%;
+    height: 86%;
   }
   30% {
-    height: 34%;
-  }
-  35% {
-    height: 47%;
-  }
-  40% {
-    height: 41%;
-  }
-  45% {
-    height: 68%;
-  }
-  50% {
-    height: 95%;
-  }
-  55% {
-    height: 14%;
-  }
-  60% {
-    height: 7%;
-  }
-  65% {
-    height: 62%;
-  }
-  70% {
-    height: 31%;
-  }
-  75% {
-    height: 31%;
-  }
-  80% {
-    height: 11%;
-  }
-  85% {
-    height: 66%;
-  }
-  90% {
     height: 89%;
   }
+  35% {
+    height: 30%;
+  }
+  40% {
+    height: 26%;
+  }
+  45% {
+    height: 24%;
+  }
+  50% {
+    height: 92%;
+  }
+  55% {
+    height: 6%;
+  }
+  60% {
+    height: 37%;
+  }
+  65% {
+    height: 77%;
+  }
+  70% {
+    height: 54%;
+  }
+  75% {
+    height: 52%;
+  }
+  80% {
+    height: 76%;
+  }
+  85% {
+    height: 36%;
+  }
+  90% {
+    height: 94%;
+  }
   95% {
-    height: 87%;
+    height: 95%;
   }
   100% {
-    height: 79%;
+    height: 45%;
   }
 }
 
 @keyframes playing-4 {
   5% {
-    height: 62%;
+    height: 10%;
   }
   10% {
-    height: 29%;
+    height: 2%;
   }
   15% {
-    height: 65%;
+    height: 80%;
   }
   20% {
-    height: 96%;
+    height: 52%;
   }
   25% {
-    height: 18%;
+    height: 86%;
   }
   30% {
-    height: 34%;
-  }
-  35% {
-    height: 47%;
-  }
-  40% {
-    height: 41%;
-  }
-  45% {
-    height: 68%;
-  }
-  50% {
-    height: 95%;
-  }
-  55% {
-    height: 14%;
-  }
-  60% {
-    height: 7%;
-  }
-  65% {
-    height: 62%;
-  }
-  70% {
-    height: 31%;
-  }
-  75% {
-    height: 31%;
-  }
-  80% {
-    height: 11%;
-  }
-  85% {
-    height: 66%;
-  }
-  90% {
     height: 89%;
   }
+  35% {
+    height: 30%;
+  }
+  40% {
+    height: 26%;
+  }
+  45% {
+    height: 24%;
+  }
+  50% {
+    height: 92%;
+  }
+  55% {
+    height: 6%;
+  }
+  60% {
+    height: 37%;
+  }
+  65% {
+    height: 77%;
+  }
+  70% {
+    height: 54%;
+  }
+  75% {
+    height: 52%;
+  }
+  80% {
+    height: 76%;
+  }
+  85% {
+    height: 36%;
+  }
+  90% {
+    height: 94%;
+  }
   95% {
-    height: 87%;
+    height: 95%;
   }
   100% {
-    height: 79%;
+    height: 45%;
   }
 }
 
 @-webkit-keyframes playing-5 {
   5% {
-    height: 83%;
+    height: 87%;
   }
   10% {
-    height: 9%;
+    height: 100%;
   }
   15% {
-    height: 20%;
+    height: 84%;
   }
   20% {
-    height: 47%;
+    height: 74%;
   }
   25% {
-    height: 33%;
+    height: 3%;
   }
   30% {
-    height: 75%;
+    height: 4%;
   }
   35% {
-    height: 20%;
+    height: 73%;
   }
   40% {
-    height: 46%;
-  }
-  45% {
     height: 54%;
   }
-  50% {
-    height: 21%;
-  }
-  55% {
-    height: 69%;
-  }
-  60% {
-    height: 64%;
-  }
-  65% {
-    height: 46%;
-  }
-  70% {
-    height: 83%;
-  }
-  75% {
-    height: 65%;
-  }
-  80% {
+  45% {
     height: 47%;
   }
+  50% {
+    height: 44%;
+  }
+  55% {
+    height: 19%;
+  }
+  60% {
+    height: 42%;
+  }
+  65% {
+    height: 53%;
+  }
+  70% {
+    height: 95%;
+  }
+  75% {
+    height: 16%;
+  }
+  80% {
+    height: 55%;
+  }
   85% {
-    height: 96%;
+    height: 47%;
   }
   90% {
-    height: 94%;
+    height: 27%;
   }
   95% {
-    height: 11%;
+    height: 59%;
   }
   100% {
-    height: 66%;
+    height: 57%;
   }
 }
 
 @keyframes playing-5 {
   5% {
-    height: 83%;
+    height: 87%;
   }
   10% {
-    height: 9%;
+    height: 100%;
   }
   15% {
-    height: 20%;
+    height: 84%;
   }
   20% {
-    height: 47%;
+    height: 74%;
   }
   25% {
-    height: 33%;
+    height: 3%;
   }
   30% {
-    height: 75%;
+    height: 4%;
   }
   35% {
-    height: 20%;
+    height: 73%;
   }
   40% {
-    height: 46%;
-  }
-  45% {
     height: 54%;
   }
-  50% {
-    height: 21%;
-  }
-  55% {
-    height: 69%;
-  }
-  60% {
-    height: 64%;
-  }
-  65% {
-    height: 46%;
-  }
-  70% {
-    height: 83%;
-  }
-  75% {
-    height: 65%;
-  }
-  80% {
+  45% {
     height: 47%;
   }
+  50% {
+    height: 44%;
+  }
+  55% {
+    height: 19%;
+  }
+  60% {
+    height: 42%;
+  }
+  65% {
+    height: 53%;
+  }
+  70% {
+    height: 95%;
+  }
+  75% {
+    height: 16%;
+  }
+  80% {
+    height: 55%;
+  }
   85% {
-    height: 96%;
+    height: 47%;
   }
   90% {
-    height: 94%;
+    height: 27%;
   }
   95% {
-    height: 11%;
+    height: 59%;
   }
   100% {
-    height: 66%;
+    height: 57%;
   }
 }
 
@@ -1252,6 +1252,10 @@ a::selection {
   background-position: 0% 0%;
   -webkit-animation: glow-left 2s ease-in-out infinite;
           animation: glow-left 2s ease-in-out infinite;
+}
+
+#ltrademark .social {
+  position: relative;
 }
 
 #ltrademark .social ul {
