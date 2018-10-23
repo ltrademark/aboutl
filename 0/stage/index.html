@@ -64,8 +64,9 @@ leo@ltrdmrk.co
       </div>
     </section>
     <section class="social" v-if="loaded">
+      <h2>Web Identities</h2>
       <ul>
-        <li v-for="social in networks"><a :href="social.url" :class="'fa fa-' + social.type"></a></li>
+        <li v-for="social in networks"><a :href="social.url" :class="'fa fa-' + social.type" target="_blank"></a></li>
       </ul>
     </section>
     <!-- <section class="work" v-if="loaded">

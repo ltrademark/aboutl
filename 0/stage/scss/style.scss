@@ -596,11 +596,13 @@ a {
 
   .social {
     position: relative;
+    text-align: center;
 
     ul {
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 0;
 
       li {
         display: inline-block;
@@ -608,6 +610,7 @@ a {
         height: 50px;
         line-height: 50px;
         text-align: center;
+        font-size: 26px;
 
         +li {
           margin-left: 10px;

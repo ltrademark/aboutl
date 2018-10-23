@@ -342,631 +342,631 @@ a::selection {
 
 @-webkit-keyframes playing-1 {
   5% {
-    height: 34%;
+    height: 57%;
   }
   10% {
-    height: 79%;
+    height: 9%;
   }
   15% {
-    height: 12%;
+    height: 82%;
   }
   20% {
-    height: 79%;
-  }
-  25% {
-    height: 40%;
-  }
-  30% {
-    height: 84%;
-  }
-  35% {
-    height: 1%;
-  }
-  40% {
-    height: 94%;
-  }
-  45% {
-    height: 100%;
-  }
-  50% {
-    height: 88%;
-  }
-  55% {
-    height: 68%;
-  }
-  60% {
-    height: 18%;
-  }
-  65% {
-    height: 26%;
-  }
-  70% {
-    height: 94%;
-  }
-  75% {
-    height: 47%;
-  }
-  80% {
     height: 2%;
   }
+  25% {
+    height: 67%;
+  }
+  30% {
+    height: 48%;
+  }
+  35% {
+    height: 7%;
+  }
+  40% {
+    height: 5%;
+  }
+  45% {
+    height: 66%;
+  }
+  50% {
+    height: 64%;
+  }
+  55% {
+    height: 67%;
+  }
+  60% {
+    height: 45%;
+  }
+  65% {
+    height: 22%;
+  }
+  70% {
+    height: 66%;
+  }
+  75% {
+    height: 84%;
+  }
+  80% {
+    height: 91%;
+  }
   85% {
-    height: 97%;
+    height: 44%;
   }
   90% {
-    height: 18%;
+    height: 16%;
   }
   95% {
-    height: 27%;
+    height: 68%;
   }
   100% {
-    height: 55%;
+    height: 47%;
   }
 }
 
 @keyframes playing-1 {
   5% {
-    height: 34%;
+    height: 57%;
   }
   10% {
-    height: 79%;
+    height: 9%;
   }
   15% {
-    height: 12%;
+    height: 82%;
   }
   20% {
-    height: 79%;
-  }
-  25% {
-    height: 40%;
-  }
-  30% {
-    height: 84%;
-  }
-  35% {
-    height: 1%;
-  }
-  40% {
-    height: 94%;
-  }
-  45% {
-    height: 100%;
-  }
-  50% {
-    height: 88%;
-  }
-  55% {
-    height: 68%;
-  }
-  60% {
-    height: 18%;
-  }
-  65% {
-    height: 26%;
-  }
-  70% {
-    height: 94%;
-  }
-  75% {
-    height: 47%;
-  }
-  80% {
     height: 2%;
   }
+  25% {
+    height: 67%;
+  }
+  30% {
+    height: 48%;
+  }
+  35% {
+    height: 7%;
+  }
+  40% {
+    height: 5%;
+  }
+  45% {
+    height: 66%;
+  }
+  50% {
+    height: 64%;
+  }
+  55% {
+    height: 67%;
+  }
+  60% {
+    height: 45%;
+  }
+  65% {
+    height: 22%;
+  }
+  70% {
+    height: 66%;
+  }
+  75% {
+    height: 84%;
+  }
+  80% {
+    height: 91%;
+  }
   85% {
-    height: 97%;
+    height: 44%;
   }
   90% {
-    height: 18%;
+    height: 16%;
   }
   95% {
-    height: 27%;
+    height: 68%;
   }
   100% {
-    height: 55%;
+    height: 47%;
   }
 }
 
 @-webkit-keyframes playing-2 {
   5% {
-    height: 56%;
+    height: 91%;
   }
   10% {
-    height: 37%;
+    height: 68%;
   }
   15% {
-    height: 76%;
-  }
-  20% {
-    height: 48%;
-  }
-  25% {
-    height: 15%;
-  }
-  30% {
-    height: 88%;
-  }
-  35% {
-    height: 71%;
-  }
-  40% {
-    height: 2%;
-  }
-  45% {
-    height: 67%;
-  }
-  50% {
-    height: 61%;
-  }
-  55% {
-    height: 96%;
-  }
-  60% {
-    height: 58%;
-  }
-  65% {
-    height: 52%;
-  }
-  70% {
-    height: 40%;
-  }
-  75% {
     height: 5%;
   }
+  20% {
+    height: 7%;
+  }
+  25% {
+    height: 66%;
+  }
+  30% {
+    height: 40%;
+  }
+  35% {
+    height: 31%;
+  }
+  40% {
+    height: 87%;
+  }
+  45% {
+    height: 53%;
+  }
+  50% {
+    height: 26%;
+  }
+  55% {
+    height: 31%;
+  }
+  60% {
+    height: 81%;
+  }
+  65% {
+    height: 6%;
+  }
+  70% {
+    height: 32%;
+  }
+  75% {
+    height: 22%;
+  }
   80% {
-    height: 12%;
+    height: 52%;
   }
   85% {
-    height: 84%;
+    height: 8%;
   }
   90% {
-    height: 97%;
+    height: 90%;
   }
   95% {
-    height: 14%;
+    height: 62%;
   }
   100% {
-    height: 1%;
+    height: 14%;
   }
 }
 
 @keyframes playing-2 {
   5% {
-    height: 56%;
+    height: 91%;
   }
   10% {
-    height: 37%;
+    height: 68%;
   }
   15% {
-    height: 76%;
-  }
-  20% {
-    height: 48%;
-  }
-  25% {
-    height: 15%;
-  }
-  30% {
-    height: 88%;
-  }
-  35% {
-    height: 71%;
-  }
-  40% {
-    height: 2%;
-  }
-  45% {
-    height: 67%;
-  }
-  50% {
-    height: 61%;
-  }
-  55% {
-    height: 96%;
-  }
-  60% {
-    height: 58%;
-  }
-  65% {
-    height: 52%;
-  }
-  70% {
-    height: 40%;
-  }
-  75% {
     height: 5%;
   }
+  20% {
+    height: 7%;
+  }
+  25% {
+    height: 66%;
+  }
+  30% {
+    height: 40%;
+  }
+  35% {
+    height: 31%;
+  }
+  40% {
+    height: 87%;
+  }
+  45% {
+    height: 53%;
+  }
+  50% {
+    height: 26%;
+  }
+  55% {
+    height: 31%;
+  }
+  60% {
+    height: 81%;
+  }
+  65% {
+    height: 6%;
+  }
+  70% {
+    height: 32%;
+  }
+  75% {
+    height: 22%;
+  }
   80% {
-    height: 12%;
+    height: 52%;
   }
   85% {
-    height: 84%;
+    height: 8%;
   }
   90% {
-    height: 97%;
+    height: 90%;
   }
   95% {
-    height: 14%;
+    height: 62%;
   }
   100% {
-    height: 1%;
+    height: 14%;
   }
 }
 
 @-webkit-keyframes playing-3 {
   5% {
-    height: 77%;
-  }
-  10% {
-    height: 35%;
-  }
-  15% {
-    height: 5%;
-  }
-  20% {
-    height: 98%;
-  }
-  25% {
-    height: 71%;
-  }
-  30% {
-    height: 48%;
-  }
-  35% {
-    height: 70%;
-  }
-  40% {
-    height: 21%;
-  }
-  45% {
-    height: 58%;
-  }
-  50% {
-    height: 77%;
-  }
-  55% {
-    height: 13%;
-  }
-  60% {
-    height: 12%;
-  }
-  65% {
-    height: 41%;
-  }
-  70% {
-    height: 72%;
-  }
-  75% {
-    height: 72%;
-  }
-  80% {
-    height: 76%;
-  }
-  85% {
     height: 24%;
   }
-  90% {
+  10% {
+    height: 22%;
+  }
+  15% {
+    height: 60%;
+  }
+  20% {
+    height: 34%;
+  }
+  25% {
+    height: 6%;
+  }
+  30% {
+    height: 74%;
+  }
+  35% {
+    height: 76%;
+  }
+  40% {
     height: 100%;
   }
+  45% {
+    height: 78%;
+  }
+  50% {
+    height: 57%;
+  }
+  55% {
+    height: 51%;
+  }
+  60% {
+    height: 44%;
+  }
+  65% {
+    height: 27%;
+  }
+  70% {
+    height: 63%;
+  }
+  75% {
+    height: 52%;
+  }
+  80% {
+    height: 46%;
+  }
+  85% {
+    height: 86%;
+  }
+  90% {
+    height: 46%;
+  }
   95% {
-    height: 21%;
+    height: 58%;
   }
   100% {
-    height: 86%;
+    height: 22%;
   }
 }
 
 @keyframes playing-3 {
   5% {
-    height: 77%;
-  }
-  10% {
-    height: 35%;
-  }
-  15% {
-    height: 5%;
-  }
-  20% {
-    height: 98%;
-  }
-  25% {
-    height: 71%;
-  }
-  30% {
-    height: 48%;
-  }
-  35% {
-    height: 70%;
-  }
-  40% {
-    height: 21%;
-  }
-  45% {
-    height: 58%;
-  }
-  50% {
-    height: 77%;
-  }
-  55% {
-    height: 13%;
-  }
-  60% {
-    height: 12%;
-  }
-  65% {
-    height: 41%;
-  }
-  70% {
-    height: 72%;
-  }
-  75% {
-    height: 72%;
-  }
-  80% {
-    height: 76%;
-  }
-  85% {
     height: 24%;
   }
-  90% {
+  10% {
+    height: 22%;
+  }
+  15% {
+    height: 60%;
+  }
+  20% {
+    height: 34%;
+  }
+  25% {
+    height: 6%;
+  }
+  30% {
+    height: 74%;
+  }
+  35% {
+    height: 76%;
+  }
+  40% {
     height: 100%;
   }
+  45% {
+    height: 78%;
+  }
+  50% {
+    height: 57%;
+  }
+  55% {
+    height: 51%;
+  }
+  60% {
+    height: 44%;
+  }
+  65% {
+    height: 27%;
+  }
+  70% {
+    height: 63%;
+  }
+  75% {
+    height: 52%;
+  }
+  80% {
+    height: 46%;
+  }
+  85% {
+    height: 86%;
+  }
+  90% {
+    height: 46%;
+  }
   95% {
-    height: 21%;
+    height: 58%;
   }
   100% {
-    height: 86%;
+    height: 22%;
   }
 }
 
 @-webkit-keyframes playing-4 {
   5% {
-    height: 10%;
-  }
-  10% {
-    height: 2%;
-  }
-  15% {
-    height: 80%;
-  }
-  20% {
-    height: 52%;
-  }
-  25% {
     height: 86%;
   }
-  30% {
-    height: 89%;
+  10% {
+    height: 55%;
   }
-  35% {
-    height: 30%;
+  15% {
+    height: 66%;
   }
-  40% {
-    height: 26%;
-  }
-  45% {
-    height: 24%;
-  }
-  50% {
-    height: 92%;
-  }
-  55% {
-    height: 6%;
-  }
-  60% {
-    height: 37%;
-  }
-  65% {
-    height: 77%;
-  }
-  70% {
-    height: 54%;
-  }
-  75% {
-    height: 52%;
-  }
-  80% {
-    height: 76%;
-  }
-  85% {
-    height: 36%;
-  }
-  90% {
-    height: 94%;
-  }
-  95% {
+  20% {
     height: 95%;
   }
+  25% {
+    height: 37%;
+  }
+  30% {
+    height: 18%;
+  }
+  35% {
+    height: 15%;
+  }
+  40% {
+    height: 23%;
+  }
+  45% {
+    height: 35%;
+  }
+  50% {
+    height: 16%;
+  }
+  55% {
+    height: 43%;
+  }
+  60% {
+    height: 91%;
+  }
+  65% {
+    height: 4%;
+  }
+  70% {
+    height: 49%;
+  }
+  75% {
+    height: 19%;
+  }
+  80% {
+    height: 5%;
+  }
+  85% {
+    height: 4%;
+  }
+  90% {
+    height: 60%;
+  }
+  95% {
+    height: 4%;
+  }
   100% {
-    height: 45%;
+    height: 84%;
   }
 }
 
 @keyframes playing-4 {
   5% {
-    height: 10%;
-  }
-  10% {
-    height: 2%;
-  }
-  15% {
-    height: 80%;
-  }
-  20% {
-    height: 52%;
-  }
-  25% {
     height: 86%;
   }
-  30% {
-    height: 89%;
+  10% {
+    height: 55%;
   }
-  35% {
-    height: 30%;
+  15% {
+    height: 66%;
   }
-  40% {
-    height: 26%;
-  }
-  45% {
-    height: 24%;
-  }
-  50% {
-    height: 92%;
-  }
-  55% {
-    height: 6%;
-  }
-  60% {
-    height: 37%;
-  }
-  65% {
-    height: 77%;
-  }
-  70% {
-    height: 54%;
-  }
-  75% {
-    height: 52%;
-  }
-  80% {
-    height: 76%;
-  }
-  85% {
-    height: 36%;
-  }
-  90% {
-    height: 94%;
-  }
-  95% {
+  20% {
     height: 95%;
   }
+  25% {
+    height: 37%;
+  }
+  30% {
+    height: 18%;
+  }
+  35% {
+    height: 15%;
+  }
+  40% {
+    height: 23%;
+  }
+  45% {
+    height: 35%;
+  }
+  50% {
+    height: 16%;
+  }
+  55% {
+    height: 43%;
+  }
+  60% {
+    height: 91%;
+  }
+  65% {
+    height: 4%;
+  }
+  70% {
+    height: 49%;
+  }
+  75% {
+    height: 19%;
+  }
+  80% {
+    height: 5%;
+  }
+  85% {
+    height: 4%;
+  }
+  90% {
+    height: 60%;
+  }
+  95% {
+    height: 4%;
+  }
   100% {
-    height: 45%;
+    height: 84%;
   }
 }
 
 @-webkit-keyframes playing-5 {
   5% {
-    height: 87%;
+    height: 37%;
   }
   10% {
-    height: 100%;
+    height: 88%;
   }
   15% {
-    height: 84%;
+    height: 94%;
   }
   20% {
-    height: 74%;
+    height: 45%;
   }
   25% {
-    height: 3%;
+    height: 39%;
   }
   30% {
-    height: 4%;
+    height: 30%;
   }
   35% {
-    height: 73%;
+    height: 90%;
   }
   40% {
-    height: 54%;
-  }
-  45% {
-    height: 47%;
-  }
-  50% {
-    height: 44%;
-  }
-  55% {
-    height: 19%;
-  }
-  60% {
-    height: 42%;
-  }
-  65% {
     height: 53%;
   }
+  45% {
+    height: 53%;
+  }
+  50% {
+    height: 94%;
+  }
+  55% {
+    height: 40%;
+  }
+  60% {
+    height: 94%;
+  }
+  65% {
+    height: 5%;
+  }
   70% {
-    height: 95%;
+    height: 18%;
   }
   75% {
-    height: 16%;
+    height: 34%;
   }
   80% {
-    height: 55%;
+    height: 54%;
   }
   85% {
-    height: 47%;
+    height: 52%;
   }
   90% {
-    height: 27%;
+    height: 40%;
   }
   95% {
-    height: 59%;
+    height: 5%;
   }
   100% {
-    height: 57%;
+    height: 65%;
   }
 }
 
 @keyframes playing-5 {
   5% {
-    height: 87%;
+    height: 37%;
   }
   10% {
-    height: 100%;
+    height: 88%;
   }
   15% {
-    height: 84%;
+    height: 94%;
   }
   20% {
-    height: 74%;
+    height: 45%;
   }
   25% {
-    height: 3%;
+    height: 39%;
   }
   30% {
-    height: 4%;
+    height: 30%;
   }
   35% {
-    height: 73%;
+    height: 90%;
   }
   40% {
-    height: 54%;
-  }
-  45% {
-    height: 47%;
-  }
-  50% {
-    height: 44%;
-  }
-  55% {
-    height: 19%;
-  }
-  60% {
-    height: 42%;
-  }
-  65% {
     height: 53%;
   }
+  45% {
+    height: 53%;
+  }
+  50% {
+    height: 94%;
+  }
+  55% {
+    height: 40%;
+  }
+  60% {
+    height: 94%;
+  }
+  65% {
+    height: 5%;
+  }
   70% {
-    height: 95%;
+    height: 18%;
   }
   75% {
-    height: 16%;
+    height: 34%;
   }
   80% {
-    height: 55%;
+    height: 54%;
   }
   85% {
-    height: 47%;
+    height: 52%;
   }
   90% {
-    height: 27%;
+    height: 40%;
   }
   95% {
-    height: 59%;
+    height: 5%;
   }
   100% {
-    height: 57%;
+    height: 65%;
   }
 }
 
@@ -1256,6 +1256,7 @@ a::selection {
 
 #ltrademark .social {
   position: relative;
+  text-align: center;
 }
 
 #ltrademark .social ul {
@@ -1268,6 +1269,7 @@ a::selection {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0;
 }
 
 #ltrademark .social ul li {
@@ -1276,6 +1278,7 @@ a::selection {
   height: 50px;
   line-height: 50px;
   text-align: center;
+  font-size: 26px;
 }
 
 #ltrademark .social ul li + li {

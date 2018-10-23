@@ -56,6 +56,9 @@ var L = new Vue({
             }, {
                 type: 'instagram',
                 url: 'http://instagram.com/ltrademark'
+            }, {
+                type: 'spotify',
+                url: 'https://open.spotify.com/user/ltrademark?si=hER0LzEZQgul7VyvccMrNg'
             }
         ],
         isAmerican: true,
