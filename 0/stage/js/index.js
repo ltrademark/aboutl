@@ -59,6 +59,12 @@ var L = new Vue({
             }, {
                 type: 'spotify',
                 url: 'https://open.spotify.com/user/ltrademark?si=hER0LzEZQgul7VyvccMrNg'
+            }, {
+                type: 'snapchat',
+                url: 'https://www.snapchat.com/add/ltrademark'
+            }, {
+                type: 'envelope',
+                url: 'mailto:leo@ltrdmrk.co'
             }
         ],
         isAmerican: true,

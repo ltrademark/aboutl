@@ -66,7 +66,12 @@ leo@ltrdmrk.co
     <section class="social" v-if="loaded">
       <h2>Web Identities</h2>
       <ul>
-        <li v-for="social in networks"><a :href="social.url" :class="'fa fa-' + social.type" target="_blank"></a></li>
+        <li v-for="social in networks">
+          <a :href="social.url" target="_blank">
+            <i :class="'fa fa-' + social.type"></i>
+            <span>{{ social.type !== 'envelope' ? social.type : 'email' }}</span>
+          </a>
+        </li>
       </ul>
     </section>
     <!-- <section class="work" v-if="loaded">

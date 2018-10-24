@@ -603,17 +603,39 @@ a {
       justify-content: center;
       align-items: center;
       padding: 0;
+      margin: 2em 0;
 
       li {
         display: inline-block;
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
+        vertical-align: top;
+        width: 150px;
+        height: auto;
         text-align: center;
-        font-size: 26px;
+        font-size: 12px;
 
         +li {
           margin-left: 10px;
+        }
+
+        a {
+          display: inline-block;
+
+          i,
+          span {
+            cursor: inherit;
+          }
+
+          i {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 2em;
+          }
+
+          span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 24px;
+          }
         }
       }
     }

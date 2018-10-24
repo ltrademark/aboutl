@@ -101,6 +101,7 @@ leo@ltrdmrk.co
       -webkit-filter: grayscale(1);
       filter: grayscale(1);
       mix-blend-mode: luminosity;
+      object-fit: cover;
     }
 
     .error-body .message {
@@ -478,13 +479,12 @@ leo@ltrdmrk.co
 
 <body>
   <section class="error-body">
-    <video preload="auto" class="background" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/396624/err.mp4" autoplay
-      muted loop></video>
+    <video muted autoplay loop class="background" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/396624/err.mp4"></video>
     <div class="message">
       <h1 t="404">404</h1>
       <div class="bottom">
         <p>You have lost your way</p>
-        <a href="/">return home</a>
+        <a href="./">return home</a>
       </div>
     </div>
   </section>
