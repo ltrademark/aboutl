@@ -190,7 +190,7 @@ const L = new Vue({
         newWindow = window.open(url, '', 'scrollbars=yes,titlebar=no,toolbar=no,location=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
     },
   },
-  mounted: function () {
+  mounted() {
     this.getLocation();
     this.getLastFM();
     setTimeout(() => {
@@ -199,6 +199,19 @@ const L = new Vue({
     }, 500);
     this.launchFullScreen(document);
     this.uaDetect();
+
+    // invert page colour on key press
+    window.addEventListener('keyup', (event) => {
+      if (event.keyCode == 73) {
+        if (event.ctrlKey) {
+          if (document.body.style.filter === "invert(1)") {
+            document.body.style.filter = "invert(0)"
+          } else {
+            document.body.style.filter = "invert(1)"
+          }
+        }
+      }
+    });
   },
   components: {
     'ltm': {

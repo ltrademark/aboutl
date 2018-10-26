@@ -185,6 +185,19 @@ var L = new Vue({
         }, 500);
         this.launchFullScreen(document);
         this.uaDetect();
+        // invert page colour on key press
+        window.addEventListener('keyup', function (event) {
+            if (event.keyCode == 73) {
+                if (event.ctrlKey) {
+                    if (document.body.style.filter === "invert(1)") {
+                        document.body.style.filter = "invert(0)";
+                    }
+                    else {
+                        document.body.style.filter = "invert(1)";
+                    }
+                }
+            }
+        });
     },
     components: {
         'ltm': {
