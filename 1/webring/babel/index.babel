@@ -4,7 +4,7 @@ let webring = new Vue({
 		loaded: false,
 		redirecting: true,
 		redirectTime: 10,
-		links: ['ltrdmrk.co','google.com','amazon.com','ltrademark.com','myspace.com','twitter.com','codepen.io','sidebar.io','vikki.net','crunchyroll.com'],
+		links: ['ltrdmrk.co', 'google.com', 'amazon.com', 'ltrademark.com', 'myspace.com', 'twitter.com', 'codepen.io', 'sidebar.io', 'vikki.net', 'crunchyroll.com'],
 		shareTag: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/396624/webring_2.svg',
 		sheetURL: 'https://spreadsheets.google.com/feeds/list/1NjxMTAEOpoKrbZ8ix3kI7778D3I_8Z4EBn7HvZIiezE/1/public/values?alt=json'
 	},
@@ -23,9 +23,9 @@ let webring = new Vue({
 		},
 		redirect() {
 			let randomID = Math.floor(Math.random() * this.links.length),
-							randomLink = this.links[randomID]['gsx$url']['$t'],
-							delay = this.redirectTime;
-			setInterval(()=>{
+				randomLink = this.links[randomID]['gsx$url']['$t'],
+				delay = this.redirectTime;
+			setInterval(() => {
 				if (delay > 1) {
 					delay--
 					this.redirectTime = delay;
@@ -34,7 +34,7 @@ let webring = new Vue({
 					return;
 				}
 			}, 1000);
-			setTimeout(()=>{
+			setTimeout(() => {
 				console.log('redirecting!');
 				window.location.replace(randomLink);
 			}, delay * 1000);
