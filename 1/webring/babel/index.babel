@@ -1,0 +1,48 @@
+let webring = new Vue({
+	el: '#wr',
+	data: {
+		loaded: false,
+		redirecting: true,
+		redirectTime: 10,
+		links: ['ltrdmrk.co','google.com','amazon.com','ltrademark.com','myspace.com','twitter.com','codepen.io','sidebar.io','vikki.net','crunchyroll.com'],
+		shareTag: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/396624/webring_2.svg',
+		sheetURL: 'https://spreadsheets.google.com/feeds/list/1NjxMTAEOpoKrbZ8ix3kI7778D3I_8Z4EBn7HvZIiezE/1/public/values?alt=json'
+	},
+	mounted() {
+		this.loaded = true;
+		this.getLinks();
+	},
+	methods: {
+		getLinks() {
+			axios.get(this.sheetURL).then((res) => {
+				this.links = res.data.feed.entry;
+				this.redirect();
+			}).catch((e) => {
+				console.log('error has occured', e)
+			})
+		},
+		redirect() {
+			let randomID = Math.floor(Math.random() * this.links.length),
+							randomLink = this.links[randomID]['gsx$url']['$t'],
+							delay = this.redirectTime;
+			setInterval(()=>{
+				if (delay > 1) {
+					delay--
+					this.redirectTime = delay;
+				} else {
+					this.redirectTime = 'Redirecting...';
+					return;
+				}
+			}, 1000);
+			setTimeout(()=>{
+				console.log('redirecting!');
+				// window.location.replace(randomLink);
+			}, delay * 1000);
+		},
+		stopRedirect() {
+			window.clearInterval();
+			window.clearTimeout();
+			this.redirecting = false;
+		}
+	}
+});
