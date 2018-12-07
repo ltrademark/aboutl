@@ -36,7 +36,7 @@ var webring = new Vue({
 			}, 1000);
 			setTimeout(function () {
 				console.log('redirecting!');
-				// window.location.replace(randomLink);
+				window.location.replace(randomLink);
 			}, delay * 1000);
 		},
 		stopRedirect: function stopRedirect() {
