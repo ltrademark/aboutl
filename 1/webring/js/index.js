@@ -6,7 +6,9 @@ var webring = new Vue({
 		redirectTime: 10,
 		links: ['ltrdmrk.co', 'google.com', 'amazon.com', 'ltrademark.com', 'myspace.com', 'twitter.com', 'codepen.io', 'sidebar.io', 'vikki.net', 'crunchyroll.com'],
 		shareTag: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/396624/webring_2.svg',
-		sheetURL: 'https://spreadsheets.google.com/feeds/list/1NjxMTAEOpoKrbZ8ix3kI7778D3I_8Z4EBn7HvZIiezE/1/public/values?alt=json' },
+		sheetURL: 'https://spreadsheets.google.com/feeds/list/1NjxMTAEOpoKrbZ8ix3kI7778D3I_8Z4EBn7HvZIiezE/1/public/values?alt=json',
+		redirectInstance: null,
+		countdownInstance: null },
 
 	mounted: function mounted() {
 		this.loaded = true;
@@ -25,7 +27,7 @@ var webring = new Vue({
 			var randomID = Math.floor(Math.random() * this.links.length),
 			randomLink = this.links[randomID]['gsx$url']['$t'],
 			delay = this.redirectTime;
-			setInterval(function () {
+			this.countdownInstance = setInterval(function () {
 				if (delay > 1) {
 					delay--;
 					_this2.redirectTime = delay;
@@ -34,13 +36,13 @@ var webring = new Vue({
 					return;
 				}
 			}, 1000);
-			setTimeout(function () {
+			this.redirectInstance = setTimeout(function () {
 				console.log('redirecting!');
 				window.location.replace(randomLink);
 			}, delay * 1000);
 		},
 		stopRedirect: function stopRedirect() {
-			window.clearInterval();
-			window.clearTimeout();
+			clearInterval(this.countdownInstance);
+			clearTimeout(this.redirectInstance);
 			this.redirecting = false;
 		} } });
