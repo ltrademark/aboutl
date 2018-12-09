@@ -1,89 +1,95 @@
 @import url('https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css');
 
-$font-stack: (
-	'Hack',
-	monospace
-);
+$font-stack: ('Hack',
+monospace);
 
 :root {
-	width: 100%;
-	height: 100%;
-	color: #fff;
-	background-color: #212121;
-	font-family: $font-stack;
-	text-align: left;
-	font-size: 12px;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color: #212121;
+  font-family: $font-stack;
+  text-align: left;
+  font-size: 12px;
 }
+
 #wr {
-	padding: 20px;
+  padding: 20px;
 }
 
 @for $i from 1 through 6 {
-	h#{$i} {
-		margin-top: 0;
-		margin-bottom: 20px;
-	}
+  h#{$i} {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
 }
 
 h1 {
-	font-size: 10vw;
+  font-size: 10vw;
 }
 
 ol li a {
-	border-bottom: 1px dotted #fff;
+  border-bottom: 1px dotted #fff;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
-img{
-	width: 50px;
-	height: auto;
+
+img {
+  width: 50px;
+  height: auto;
 }
 
 .x-page {
-	&-body {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 auto;
-	}
+  &-body {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
 
-	&-header {
-		width: 100%;
-		text-align: center;
-		user-select: none;
-	}
-	&-body {
-		font-size: .8em;
-		ol {
-			column-count: 3;
-			column-gap: 40px;
-			column-span: all;
-			column-width: 100px;
-			max-height: 800px;
-			li {
-				line-height: 30px;
-				margin: 5px;
-			}
-		}
-	}
-	&-footer {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		left: 0;
-		padding: 20px;
-		display: flex;
-		align-items: flex-end;
-		justify-content: space-between;
-		user-select: none;
-		p {
-			font-size:.7em;
-			opacity: .54;
-		}
-		a {
-			text-align: right;
-		}
-	}
+  &-header {
+    width: 100%;
+    text-align: center;
+    user-select: none;
+  }
+
+  &-body {
+    font-size: .8em;
+
+    ol {
+      column-count: 3;
+      column-gap: 40px;
+      column-span: all;
+      column-width: 100px;
+      max-height: 800px;
+
+      li {
+        line-height: 30px;
+        margin: 5px;
+      }
+    }
+  }
+
+  &-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    user-select: none;
+
+    p {
+      font-size: .7em;
+      opacity: .54;
+    }
+
+    a {
+      text-align: right;
+    }
+  }
 }
