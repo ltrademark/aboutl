@@ -4,7 +4,7 @@ https://keybase.io/ltrademark
 
 I hereby claim:
 
-  * I am an admin of http://leoh.me
+  * I am an admin of http://ltrdmrk.co
   * I am ltrademark (https://keybase.io/ltrademark) on keybase.
   * I have a public key with fingerprint D31F 432E 4443 3DEC E218  4B09 1A4F 98B1 58D1 AD4B
 
@@ -22,8 +22,8 @@ To do so, I am signing this object:
             "username": "ltrademark"
         },
         "service": {
-            "hostname": "leoh.me",
-            "protocol": "http:"
+            "hostname": "ltrdmrk.co",
+            "protocol": "https:"
         },
         "type": "web_service_binding",
         "version": 1
